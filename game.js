@@ -1692,7 +1692,7 @@ function getFightWinChance(fightId){
 
 function stopFloating(){
 
-	document.getElementById("meditate").src = "Assets/monk/transparent/monk2transparent.png";
+	document.getElementById("meditate").src = "monk2transparent.png";
 
 }
 
