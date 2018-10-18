@@ -34,7 +34,7 @@
 
             <progress id = "progress" style = "width:100%" value="0" max="1"></progress>
 
-			<h4 style = "text-align: center;" id = "currentRealm">凡人</h4>
+			<h4 style = "text-align: center;" id = "currentRealm">Mortal</h4>
 
             <a onclick = "rankup()" id = "rankupButton" class="waves-effect waves-light btn" style = "display: none;">进阶</a>
 
@@ -178,7 +178,7 @@
      		 <div id = "train">
 
 					<h5 id = "displayClickPower" style = "text-align: center;">您当前每次点击获得的经验是： 0.1</h5>
-					<h5 id = "displayClickPowerLegacy" style = "display:none;">Your current xp per click with legacy bonus is: 0.1</h5>
+					<h5 id = "displayClickPowerLegacy" style = "display:none;">您当前的每次点击经验与遗物奖励是: 0.1</h5>
 
      		 	<table id = "trainTable">
 
@@ -292,9 +292,9 @@
 
      		 		<thead>
 
-     		 			<th>Buy</th>
-     		 			<th>Cost</th>
-     		 			<th>Use</th>
+     		 			<th>购买</th>
+     		 			<th>成本</th>
+     		 			<th>作用</th>
 
      		 		</thead>
 
@@ -304,7 +304,7 @@
 
      		 				<td><a onclick = "firstSwordPurchase()" id = "firstPurchase" class="waves-effect waves-light btn">Basic Sword</a></td>
      		 				<td id = "firstPurchaseCost">100</td>
-     		 				<td id = "firstPurchaseUse">Increase Power by 0.15</td>
+     		 				<td id = "firstPurchaseUse">增加修为 0.15</td>
 
      		 			</tr>
 
@@ -312,7 +312,7 @@
 
      		 				<td><a onclick = "firstManualPurchase()" id = "secondPurchase" class="waves-effect waves-light btn">Basic Sword Manual</a></td>
      		 				<td id = "secondPurchaseCost">500</td>
-     		 				<td id = "secondPurchaseUse">Increase Power by 0.15</td>
+     		 				<td id = "secondPurchaseUse">增加修为 0.15</td>
 
      		 			</tr>
 
@@ -328,7 +328,7 @@
 
      		 				<td><a onclick = "secondSwordPurchase()" id = "fourthPurchase" class="waves-effect waves-light btn">Low grade Holy Sword</a></td>
      		 				<td id = "fourthPurchaseCost">1e+4</td>
-     		 				<td id = "fourthPurchaseUse">Increase Power by 0.15</td>
+     		 				<td id = "fourthPurchaseUse">增加修为 0.15</td>
 
      		 			</tr>
 
@@ -336,7 +336,7 @@
 
      		 				<td><a onclick = "secondManualPurchase()" id = "fifthPurchase" class="waves-effect waves-light btn">Intermediate Sword Manual</a></td>
      		 				<td id = "fifthPurchaseCost">5e+4</td>
-     		 				<td id = "fifthPurchaseUse">Increase Power by 0.15</td>
+     		 				<td id = "fifthPurchaseUse">增加修为 0.15</td>
 
      		 			</tr>
 
@@ -352,7 +352,7 @@
 
      		 				<td><a onclick = "thirdSwordPurchase()" id = "seventhPurchase" class="waves-effect waves-light btn">High grade Holy Sword</a></td>
      		 				<td id = "seventhPurchaseCost">1e+6</td>
-     		 				<td id = "seventhPurchaseUse">Increase Power by 0.15</td>
+     		 				<td id = "seventhPurchaseUse">增加修为 0.15</td>
 
      		 			</tr>
 
@@ -360,7 +360,7 @@
 
      		 				<td><a onclick = "thirdManualPurchase()" id = "eighthPurchase" class="waves-effect waves-light btn">Advanced Sword Manual</a></td>
      		 				<td id = "eighthPurchaseCost">5e+6</td>
-     		 				<td id = "eighthPurchaseUse">Increase Power by 0.15</td>
+     		 				<td id = "eighthPurchaseUse">增加修为 0.15</td>
 
      		 			</tr>
 
@@ -376,7 +376,7 @@
 
      		 				<td><a onclick = "fourthSwordPurchase()" id = "tenthPurchase" class="waves-effect waves-light btn">Supreme grade Holy Sword</a></td>
      		 				<td id = "tenthPurchaseCost">1e+8</td>
-     		 				<td id = "tenthPurchaseUse">Increase Power by 0.15</td>
+     		 				<td id = "tenthPurchaseUse">增加修为 0.15</td>
 
      		 			</tr>
 
@@ -384,7 +384,7 @@
 
      		 				<td><a onclick = "fourthManualPurchase()" id = "eleventhPurchase" class="waves-effect waves-light btn">Supreme Sword Manual</a></td>
      		 				<td id = "eleventhPurchaseCost">5e+8</td>
-     		 				<td id = "eleventhPurchaseUse">Increase Power by 0.15</td>
+     		 				<td id = "eleventhPurchaseUse">增加修为 0.15</td>
 
      		 			</tr>
 
@@ -400,7 +400,7 @@
 
      		 				<td><a onclick = "fifthSwordPurchase()" id = "thirteenthPurchase" class="waves-effect waves-light btn">Ultimate grade Holy Sword</a></td>
      		 				<td id = "thirteenthPurchaseCost">1e+10</td>
-     		 				<td id = "thirteenthPurchaseUse">Increase Power by 0.15</td>
+     		 				<td id = "thirteenthPurchaseUse">增加修为 0.15</td>
 
      		 			</tr>
 
@@ -408,7 +408,7 @@
 
      		 				<td><a onclick = "fifthManualPurchase()" id = "fourteenthPurchase" class="waves-effect waves-light btn">Ultimate Sword Manual</a></td>
      		 				<td id = "fourteenthPurchaseCost">5e+10</td>
-     		 				<td id = "fourteenthPurchaseUse">Increase Power by 0.15</td>
+     		 				<td id = "fourteenthPurchaseUse">增加修为 0.15</td>
 
      		 			</tr>
 

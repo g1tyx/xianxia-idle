@@ -628,7 +628,7 @@ function legacy(){
 	calculateLegacyBoost();
 	document.getElementById("displayClickPower").innerHTML = "您当前每次点击获得的经验是： " + convertNumbers(incrementAmount);
 	document.getElementById("displayClickPowerLegacy").setAttribute("style", "text-align: center;");
-	document.getElementById("displayClickPowerLegacy").innerHTML = "Your current xp per click with legacy bonus is: " + convertNumbers(incrementAmount * boostFactor);
+	document.getElementById("displayClickPowerLegacy").innerHTML = "您当前的每次点击经验与遗物奖励是: " + convertNumbers(incrementAmount * boostFactor);
 	legacyUpgrades();
 
 }
@@ -639,7 +639,7 @@ function legacyScreenUpdate(){
 	document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 	document.getElementById("newLegacyPoints").innerHTML = "遗物点数 (重置后获得): " + convertNumbers(newLegacyPoints);
 	document.getElementById("xp").innerHTML = "经验: " + convertNumbers(xp);
-	document.getElementById("currentRealm").innerHTML = "凡人";
+	document.getElementById("currentRealm").innerHTML = "Mortal";
 	document.getElementById("progress").setAttribute("value", "0");
 	document.getElementById("progress").setAttribute("max", "1");
 	document.getElementById("rankupButton").setAttribute("style", "display: none;");
@@ -1822,12 +1822,12 @@ function Train(trainId){
 
 		document.getElementById(trainCostName).innerHTML = convertNumbers(trainCost * 2);
 
-		document.getElementById("displayClickPower").innerHTML = "Y您当前每次点击获得的经验是： " + convertNumbers(incrementAmount);
+		document.getElementById("displayClickPower").innerHTML = "您当前每次点击获得的经验是： " + convertNumbers(incrementAmount);
 
 		if (legacyPoints > 0){
 
 			document.getElementById("displayClickPowerLegacy").setAttribute("style", "text-align: center;");
-			document.getElementById("displayClickPowerLegacy").innerHTML = "Your current current xp per click with legacy bonus is: " + convertNumbers(incrementAmount * boostFactor);
+			document.getElementById("displayClickPowerLegacy").innerHTML = "您当前的每次点击经验与遗物奖励是: " + convertNumbers(incrementAmount * boostFactor);
 
 		}
 
@@ -2367,7 +2367,7 @@ function loadLocalSave(){
 
 		legacyUnlock();
 		document.getElementById("displayClickPowerLegacy").setAttribute("style", "text-align: center;");
-		document.getElementById("displayClickPowerLegacy").innerHTML = "Your current xp per click with legacy bonus is: " + (incrementAmount * boostFactor).toFixed(3);
+		document.getElementById("displayClickPowerLegacy").innerHTML = "您当前的每次点击经验与遗物奖励是: " + (incrementAmount * boostFactor).toFixed(3);
 		updateLegacyTable();
 
 	}
