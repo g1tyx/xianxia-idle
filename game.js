@@ -598,7 +598,7 @@ function rankup(){
 
 function checkLegacy(){
 
-	if (confirm("Are you sure you wish to legacy? You will lose all of your current progress, bar legacy points and upgrades. However, you will gain legacy points, each legacy point granting a 1% boost to xp gain, and can also be used to purchase legacy upgrades.") == true) {
+	if (confirm("你确定要转生吗？ 您将丢失所有当前进度。 但是，您将获得遗物点数，每个遗物点数可以使经验增益提高1％，还可以用于购买遗物升级。") == true) {
 
 		legacy();
 
