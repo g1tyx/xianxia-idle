@@ -136,7 +136,7 @@ function passiveClicks(){
 		document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " 灵石";
 
 		var tooltipAnchor = $('#passiveClickBtn');
-		tooltipAnchor.attr('data-tooltip', "Gain passive clicks per second - cost: " + clickCost + " spirit stones, current: " + clickPerSecond.toFixed(2) + " cps");
+		tooltipAnchor.attr('data-tooltip', "每秒获得被动点击 - 成本: " + clickCost + " 灵石, 当前: " + clickPerSecond.toFixed(2) + " cps");
 		tooltipAnchor.tooltip();
 
 		clickId = setInterval(function(){
@@ -159,7 +159,7 @@ function passiveClicks(){
 		clickPerSecond = (clickPerInterval / (baseClickInterval / 1000));
 
 		var tooltipAnchor = $('#passiveClickBtn');
-		tooltipAnchor.attr('data-tooltip', "Gain passive clicks per second - cost: " + clickCost + " spirit stones, current: " + clickPerSecond.toFixed(2) + " cps");
+		tooltipAnchor.attr('data-tooltip', "每秒获得被动点击 - 成本: " + clickCost + " 灵石, 当前:  " + clickPerSecond.toFixed(2) + " cps");
 		tooltipAnchor.tooltip();
 
 		document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " 灵石";
@@ -1021,7 +1021,7 @@ function legacyAutoFightOnePurchase() {
 		document.getElementById("firstLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("firstAutoFightLegacyCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		passiveFights.maxPassiveFights = 3;
 
@@ -1040,7 +1040,7 @@ function legacySwordPermOnePurchase() {
 		document.getElementById("secondLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("firstSwordPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("firstPurchaseRow").getAttribute("style") == "") {
 
@@ -1064,7 +1064,7 @@ function legacyManualPermOnePurchase() {
 		document.getElementById("thirdLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("firstManualPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("secondPurchaseRow").getAttribute("style") == "") {
 
@@ -1089,7 +1089,7 @@ function legacyCultivationPermOnePurchase() {
 		document.getElementById("fourthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("firstCultivationPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("thirdPurchaseRow").getAttribute("style") == "") {
 
@@ -1114,7 +1114,7 @@ function legacyShopOnePurchase() {
 		document.getElementById("fifthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("firstLegacyExtraShopCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		document.getElementById("seventhPurchaseRow").setAttribute("style", "");
 		document.getElementById("eighthPurchaseRow").setAttribute("style", "");
@@ -1135,7 +1135,7 @@ function legacyAutoFightTwoPurchase() {
 		document.getElementById("sixthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("secondAutoFightLegacyCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		passiveFights.maxPassiveFights = passiveFights.maxPassiveFights + 2;
 
@@ -1154,7 +1154,7 @@ function legacySwordPermTwoPurchase() {
 		document.getElementById("seventhLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("secondSwordPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("fourthPurchaseRow").getAttribute("style") == "") {
 
@@ -1178,7 +1178,7 @@ function legacyManualPermTwoPurchase(){
 		document.getElementById("eighthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("secondManualPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("fifthPurchaseRow").getAttribute("style") == "") {
 
@@ -1203,7 +1203,7 @@ function legacyCultivationPermTwoPurchase() {
 		document.getElementById("ninthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("secondCultivationPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("sixthPurchaseRow").getAttribute("style") == "") {
 
@@ -1226,7 +1226,7 @@ function legacyExtraFightOnePurchase(){
 	if (legacyPoints >= document.getElementById("firstLegacyExtraFightCost").innerHTML){
 
 		legacyPoints = legacyPoints - document.getElementById("firstLegacyExtraFightCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		document.getElementById("tenthLegacyRow").setAttribute("style", "display: none;");
 
@@ -1246,7 +1246,7 @@ function legacyExtraTrainOnePurchase(){
 	if (legacyPoints >= document.getElementById("firstLegacyExtraTrainCost").innerHTML){
 
 		legacyPoints = legacyPoints - document.getElementById("firstLegacyExtraTrainCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		document.getElementById("eleventhLegacyRow").setAttribute("style", "display: none;");
 
@@ -1268,7 +1268,7 @@ function legacyAutoFightThreePurchase() {
 		document.getElementById("twelfthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("thirdAutoFightLegacyCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		passiveFights.maxPassiveFights = passiveFights.maxPassiveFights + 2;
 
@@ -1287,7 +1287,7 @@ function legacySwordPermThreePurchase() {
 		document.getElementById("thirteenthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("thirdSwordPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("seventhPurchaseRow").getAttribute("style") == "") {
 
@@ -1311,7 +1311,7 @@ function legacyManualPermThreePurchase() {
 		document.getElementById("fourteenthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("thirdManualPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("eighthPurchaseRow").getAttribute("style") == "") {
 
@@ -1336,7 +1336,7 @@ function legacyCultivationPermThreePurchase() {
 		document.getElementById("fifteenthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("thirdCultivationPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("ninthPurchaseRow").getAttribute("style") == "") {
 
@@ -1361,7 +1361,7 @@ function legacyShopTwoPurchase() {
 		document.getElementById("sixteenthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("secondLegacyExtraShopCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		document.getElementById("tenthPurchaseRow").setAttribute("style", "");
 		document.getElementById("eleventhPurchaseRow").setAttribute("style", "");
@@ -1382,7 +1382,7 @@ function legacyAutoFightFourPurchase() {
 		document.getElementById("seventeenthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("fourthAutoFightLegacyCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		passiveFights.maxPassiveFights = passiveFights.maxPassiveFights + 2;
 
@@ -1400,7 +1400,7 @@ function autoRankupPurchase() {
 
 		legacyPoints = legacyPoints - document.getElementById("autoRankupCost").innerHTML;
 
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		document.getElementById("eighteenthLegacyRow").setAttribute("style", "display: none;");
 
@@ -1417,7 +1417,7 @@ function legacyExtraFightTwoPurchase(){
 	if (legacyPoints >= document.getElementById("secondLegacyExtraFightCost").innerHTML){
 
 		legacyPoints = legacyPoints - document.getElementById("secondLegacyExtraFightCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		document.getElementById("nineteenthLegacyRow").setAttribute("style", "display: none;");
 
@@ -1437,7 +1437,7 @@ function legacyExtraTrainTwoPurchase(){
 	if (legacyPoints >= document.getElementById("secondLegacyExtraTrainCost").innerHTML){
 
 		legacyPoints = legacyPoints - document.getElementById("secondLegacyExtraTrainCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		document.getElementById("twentiethLegacyRow").setAttribute("style", "display: none;");
 
@@ -1459,7 +1459,7 @@ function legacyAutoFightFivePurchase() {
 		document.getElementById("twentyfirstLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("fifthAutoFightLegacyCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		passiveFights.maxPassiveFights = passiveFights.maxPassiveFights + 2;
 
@@ -1478,7 +1478,7 @@ function legacySwordPermFourPurchase() {
 		document.getElementById("twentysecondLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("fourthSwordPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("tenthPurchaseRow").getAttribute("style") == "") {
 
@@ -1502,7 +1502,7 @@ function legacyManualPermFourPurchase() {
 		document.getElementById("twentythirdLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("fourthManualPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("eleventhPurchaseRow").getAttribute("style") == "") {
 
@@ -1527,7 +1527,7 @@ function legacyCultivationPermFourPurchase() {
 		document.getElementById("twentyfourthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("fourthCultivationPermCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		if (document.getElementById("twelfthPurchaseRow").getAttribute("style") == "") {
 
@@ -1552,7 +1552,7 @@ function legacyShopThreePurchase() {
 		document.getElementById("twentyfifthLegacyRow").setAttribute("style", "display: none;");
 
 		legacyPoints = legacyPoints - document.getElementById("thirdLegacyExtraShopCost").innerHTML;
-		document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
+		document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 
 		document.getElementById("thirteenthPurchaseRow").setAttribute("style", "");
 		document.getElementById("fourteenthPurchaseRow").setAttribute("style", "");
@@ -2385,7 +2385,7 @@ function updateValues(){
 	document.getElementById("displayClickPower").innerHTML = "您当前每次点击获得的经验是： " + convertNumbers(incrementAmount);
 	// fixing tooltip
 	var tooltipAnchor = $('#passiveClickBtn');
-		tooltipAnchor.attr('data-tooltip', "Gain passive clicks per second - cost: " + clickCost + " spirit stones, current: " + clickPerInterval + " cps");
+		tooltipAnchor.attr('data-tooltip', "每秒获得被动点击 - 成本: " + clickCost + " 灵石, 当前:  " + clickPerInterval + " cps");
 		tooltipAnchor.tooltip();
 
 	document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " 灵石";
