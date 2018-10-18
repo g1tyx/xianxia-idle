@@ -1588,7 +1588,7 @@ function legacyUnlock(){
 
 		}
 
-		document.getElementById("newLegacyPoints").innerHTML = "Legacy Points (Gained Upon Reset): " + convertNumbers(newLegacyPoints);
+		document.getElementById("newLegacyPoints").innerHTML = "遗物点数 (重置后获得): " + convertNumbers(newLegacyPoints);
 
 		console.log("Calculated Legacy Points")
 
@@ -1614,7 +1614,7 @@ function legacyPointCalculation(){
 
 	}
 
-	document.getElementById("newLegacyPoints").innerHTML = "Legacy Points (Gained Upon Reset): " + convertNumbers(newLegacyPoints);
+	document.getElementById("newLegacyPoints").innerHTML = "遗物点数 (重置后获得): " + convertNumbers(newLegacyPoints);
 
 }
 
