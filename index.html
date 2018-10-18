@@ -44,7 +44,7 @@
 
 			<img onclick = "increaseXp(xp, incrementAmount)" style = "width: 75%; display: block; margin-left: auto; margin-right: auto; outline: none;" type = "image" src = "monktransparent.png" id = "meditate"></img>
 
-            <a onclick="passiveClicks()" id = "passiveClickBtn" style = "width: 100%" data-position = "bottom" data-tooltip = "Gain passive clicks per second - cost: 10 spirit stones, current: 0 cps" class = "tooltipped waves-effect waves-light btn">幽静的冥想 - 10 S.S.</a>
+            <a onclick="passiveClicks()" id = "passiveClickBtn" style = "width: 100%" data-position = "bottom" data-tooltip = "Gain passive clicks per second - cost: 10 spirit stones, current: 0 cps" class = "tooltipped waves-effect waves-light btn">幽静的冥想 - 10 灵石</a>
 
 		</div>
 
@@ -98,74 +98,74 @@
 				              <th>战斗</th>
                       <th>+</th>
 				              <th>敌人的修为等级</th>
-				              <th>奖励 (S.S.)</th>
+				              <th>奖励 (灵石)</th>
 				        </tr>
 				    </thead>
 
 				    <tbody>
 				    <tr>
-				    	<td><a onclick = "Fight('firstFight')" id = "firstFight" data-position = "bottom" data-tooltip = "Victory Grants 1 Spirit Stone. Power above the enemies power (0.1), is required for guaranteed victory" class="tooltipped waves-effect waves-light btn">Fight a Mortal</a><p style = "display: none;" id = "firstFightDefeat"></p></td>
-                        <td><a onclick = "passiveFightOne();" id = "firstFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every second (per upgrade) - 10 S.S." class = "tooltipped waves-effect waves-light btn">+</a></td>
+				    	<td><a onclick = "Fight('firstFight')" id = "firstFight" data-position = "bottom" data-tooltip = "胜利授予1灵石。 要想获胜，至少要比敌人修为高（0.1）" class="tooltipped waves-effect waves-light btn">和凡人战斗</a><p style = "display: none;" id = "firstFightDefeat"></p></td>
+                        <td><a onclick = "passiveFightOne();" id = "firstFightPassive" data-position = "bottom" data-tooltip = "自动战斗：这是自动战斗，每秒一次（每次升级） - 10 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
 				        <td id = "firstFightPower">0.1</td>
 				        <td id = "firstFightReward">1</td>
 				    </tr>
 				    <tr>
 				        <td><a onclick = "Fight('secondFight')" id = "secondFight" data-position = "bottom" data-tooltip = "Victory Grants 5 Spirit Stones. Power above the enemies power (1.0), is required for guaranteed victory" class="tooltipped waves-effect waves-light btn">Fight an arrogant young master</a><p style = "display: none;" id = "secondFightDefeat"></p></td>
-                        <td><a onclick = "passiveFightTwo();" id = "secondFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every  2 seconds (per upgrade) - 50 S.S." class = "tooltipped waves-effect waves-light btn">+</a></td>
+                        <td><a onclick = "passiveFightTwo();" id = "secondFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every  2 seconds (per upgrade) - 50 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
 				        <td id = "secondFightPower">1.0</td>
 				        <td id = "secondFightReward">5</td>
 				    </tr>
 				    <tr>
 				        <td><a onclick = "Fight('thirdFight')" id = "thirdFight" data-position = "bottom" data-tooltip = "Victory Grants 25 Spirit Stones. Power above the enemies power (1.9), is required for guaranteed victory" class="tooltipped waves-effect waves-light btn">Fight the young master's older brother</a><p style = "display: none;" id = "thirdFightDefeat"></p></td>
-                        <td><a onclick = "passiveFightThree();" id = "thirdFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 3 seconds (per upgrade) - 250 S.S." class = "tooltipped waves-effect waves-light btn">+</a></td>
+                        <td><a onclick = "passiveFightThree();" id = "thirdFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 3 seconds (per upgrade) - 250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
 				        <td id = "thirdFightPower">1.9</td>
 				        <td id = "thirdFightReward">25</td>
 				    </tr>
 				    <tr>
 				        <td><a onclick = "Fight('fourthFight')" id = "fourthFight" data-position = "bottom" data-tooltip = "Victory Grants 125 Spirit Stones. Power above the enemies power (3.0), is required for guaranteed victory" class="tooltipped waves-effect waves-light btn">Fight the young master's elder</a><p style = "display: none;" id = "fourthFightDefeat"></p></td>
-                        <td><a onclick = "passiveFightFour();" id = "fourthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 4 seconds (per upgrade) - 1250 S.S." class = "tooltipped waves-effect waves-light btn">+</a></td>
+                        <td><a onclick = "passiveFightFour();" id = "fourthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 4 seconds (per upgrade) - 1250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
 				        <td id = "fourthFightPower">3.0</td>
 				        <td id = "fourthFightReward">125</td>
 				    </tr>
 				    <tr>
 				        <td><a onclick = "Fight('fifthFight')" id = "fifthFight" data-position = "bottom" data-tooltip = "Victory Grants 625 Spirit Stones. Power above the enemies power (4.3), is required for guaranteed victory" class="tooltipped waves-effect waves-light btn">Fight the young master's Ancestor</a><p style = "display: none;" id = "fifthFightDefeat"></p></td>
-                        <td><a onclick = "passiveFightFive();" id = "fifthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 5 seconds (per upgrade) - 6250 S.S." class = "tooltipped waves-effect waves-light btn">+</a></td>
+                        <td><a onclick = "passiveFightFive();" id = "fifthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 5 seconds (per upgrade) - 6250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
 				        <td id = "fifthFightPower">4.3</td>
 				        <td id = "fifthFightReward">625</td>
 				    </tr>
             <tr>
                 <td><a onclick = "Fight('sixthFight')" id = "sixthFight" data-position = "bottom" data-tooltip = "Victory Grants 3125 Spirit Stones. Power above the enemies power (6.0), is required for guaranteed victory" class="tooltipped waves-effect waves-light btn">Fight the sect's leader</a><p style = "display: none;" id = "sixthFightDefeat"></p></td>
-                <td><a onclick = "passiveFightSix();" id = "sixthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 6 seconds (per upgrade) - 31250 S.S." class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td><a onclick = "passiveFightSix();" id = "sixthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 6 seconds (per upgrade) - 31250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
                 <td id = "sixthFightPower">6.3</td>
                 <td id = "sixthFightReward">3125</td>
             </tr>
             <tr>
                 <td><a onclick = "Fight('seventhFight')" id = "seventhFight" data-position = "bottom" data-tooltip = "Victory Grants 15625 Spirit Stones. Power above the enemies power (8.0), is required for guaranteed victory" class="tooltipped waves-effect waves-light btn">Fight the whole sect at once</a><p style = "display: none;" id = "seventhFightDefeat"></p></td>
-                <td><a onclick = "passiveFightSeven();" id = "seventhFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 7 seconds (per upgrade) - 156250 S.S." class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td><a onclick = "passiveFightSeven();" id = "seventhFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 7 seconds (per upgrade) - 156250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
                 <td id = "seventhFightPower">8.0</td>
                 <td id = "seventhFightReward">15625</td>
             </tr>
 						<tr id = "eighthFightRow" style = "display: none;">
                 <td><a onclick = "Fight('eighthFight')" id = "eighthFight" data-position = "bottom" data-tooltip = "Victory Grants 78125 Spirit Stones. Power above the enemies power (10.0), is required for guaranteed victory" class="tooltipped waves-effect waves-light btn">Fight a fellow monk</a><p style = "display: none;" id = "eighthFightDefeat"></p></td>
-                <td><a onclick = "passiveFightEight();" id = "eighthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 8 seconds (per upgrade) - 781250 S.S." class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td><a onclick = "passiveFightEight();" id = "eighthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 8 seconds (per upgrade) - 781250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
                 <td id = "eighthFightPower">10.0</td>
                 <td id = "eighthFightReward">78125</td>
             </tr>
 						<tr id = "ninthFightRow" style = "display: none;">
                 <td><a onclick = "Fight('ninthFight')" id = "ninthFight" data-position = "bottom" data-tooltip = "Victory Grants 390625 Spirit Stones. Power above the enemies power (12.3), is required for guaranteed victory" class="tooltipped waves-effect waves-light btn">Fight your ancient master</a><p style = "display: none;" id = "ninthFightDefeat"></p></td>
-                <td><a onclick = "passiveFightNine();" id = "ninthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 9 seconds (per upgrade) - 3906250 S.S." class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td><a onclick = "passiveFightNine();" id = "ninthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 9 seconds (per upgrade) - 3906250 灵石<br>" class = "tooltipped waves-effect waves-light btn">+</a></td>
                 <td id = "ninthFightPower">12.3</td>
                 <td id = "ninthFightReward">390625</td>
             </tr>
 						<tr id = "tenthFightRow" style = "display: none;">
                 <td><a onclick = "Fight('tenthFight')" id = "tenthFight" data-position = "bottom" data-tooltip = "Victory Grants 1953125 Spirit Stones. Power above the enemies power (14.9), is required for guaranteed victory" class="tooltipped waves-effect waves-light btn">Fight your grandmaster</a><p style = "display: none;" id = "tenthFightDefeat"></p></td>
-                <td><a onclick = "passiveFightTen();" id = "tenthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 10 seconds (per upgrade) - 19531250 S.S." class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td><a onclick = "passiveFightTen();" id = "tenthFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 10 seconds (per upgrade) - 19531250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
                 <td id = "tenthFightPower">14.9</td>
                 <td id = "tenthFightReward">1953125</td>
             </tr>
 						<tr id = "eleventhFightRow" style = "display: none;">
                 <td><a onclick = "Fight('eleventhFight')" id = "eleventhFight" data-position = "bottom" data-tooltip = "Victory Grants 9765625 Spirit Stones. Power above the enemies power (17.8), is required for guaranteed victory" class="tooltipped waves-effect waves-light btn">Fight the murderer of your family</a><p style = "display: none;" id = "eleventhFightDefeat"></p></td>
-                <td><a onclick = "passiveFightEleven();" id = "eleventhFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 11 seconds (per upgrade) - 97656250 S.S." class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td><a onclick = "passiveFightEleven();" id = "eleventhFightPassive" data-position = "bottom" data-tooltip = "Auto Fight: Does this fight automatically, once every 11 seconds (per upgrade) - 97656250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
                 <td id = "eleventhFightPower">17.8</td>
                 <td id = "eleventhFightReward">9765625</td>
             </tr>
@@ -184,9 +184,9 @@
 
      		 		<thead>
 
-     		 			<th>Training</th>
-     		 			<th>Cost</th>
-     		 			<th class = "tooltipped" data-position = "bottom" data-tooltip = "This is a base xp per click, any boost from legacy is applied on top of this.">Base Xp per click Increase</th>
+     		 			<th>训练</th>
+     		 			<th>成本(灵石)</th>
+     		 			<th class = "tooltipped" data-position = "bottom" data-tooltip = "这是每次点击的基本经验，遗物的任何提升都会在此基础上应用。">每次点击增加基础经验</th>
 
      		 		</thead>
 
@@ -194,7 +194,7 @@
 
      		 			<tr>
 
-     		 				<td><a onclick = "Train('firstTrain')" id = "firstTrain" class="waves-effect waves-light btn">Use a training Room</a></td>
+     		 				<td><a onclick = "Train('firstTrain')" id = "firstTrain" class="waves-effect waves-light btn">使用训练室</a></td>
      		 				<td id = "firstTrainCost">1</td>
      		 				<td id = "firstTrainReward">0.001</td>
 

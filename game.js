@@ -133,7 +133,7 @@ function passiveClicks(){
 
 		clickPerSecond = (clickPerInterval / (baseClickInterval / 1000));
 
-		document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " S.S.";
+		document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " 灵石";
 
 		var tooltipAnchor = $('#passiveClickBtn');
 		tooltipAnchor.attr('data-tooltip', "Gain passive clicks per second - cost: " + clickCost + " spirit stones, current: " + clickPerSecond.toFixed(2) + " cps");
@@ -162,7 +162,7 @@ function passiveClicks(){
 		tooltipAnchor.attr('data-tooltip', "Gain passive clicks per second - cost: " + clickCost + " spirit stones, current: " + clickPerSecond.toFixed(2) + " cps");
 		tooltipAnchor.tooltip();
 
-		document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " S.S.";
+		document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " 灵石";
 
 		clickInterval = (baseClickInterval / clickPerInterval);
 
@@ -197,7 +197,7 @@ function passiveFightOne(){
 		} else {
 
 			var tooltipAnchor = $('#firstFightPassive');
-			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.firstFightCost + " S.S.");
+			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.firstFightCost + " 灵石");
 			tooltipAnchor.tooltip();
 
 		}
@@ -232,7 +232,7 @@ function passiveFightTwo(){
 		} else {
 
 			var tooltipAnchor = $('#secondFightPassive');
-			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 2 seconds (per upgrade) - " + passiveFights.secondFightCost + " S.S.");
+			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 2 seconds (per upgrade) - " + passiveFights.secondFightCost + " 灵石");
 			tooltipAnchor.tooltip();
 
 		}
@@ -267,7 +267,7 @@ function passiveFightThree(){
 		} else {
 
 			var tooltipAnchor = $('#thirdFightPassive');
-			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 3 seconds (per upgrade) - " + passiveFights.thirdFightCost + " S.S.");
+			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 3 seconds (per upgrade) - " + passiveFights.thirdFightCost + " 灵石");
 			tooltipAnchor.tooltip();
 
 		}
@@ -302,7 +302,7 @@ function passiveFightFour(){
 		} else {
 
 			var tooltipAnchor = $('#fourthFightPassive');
-			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 4 seconds (per upgrade) - " + passiveFights.fourthFightCost + " S.S.");
+			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 4 seconds (per upgrade) - " + passiveFights.fourthFightCost + " 灵石");
 			tooltipAnchor.tooltip();
 
 		}
@@ -337,7 +337,7 @@ function passiveFightFive(){
 		} else {
 
 			var tooltipAnchor = $('#fifthFightPassive');
-			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 5 seconds (per upgrade) - " + passiveFights.fifthFightCost + " S.S.");
+			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 5 seconds (per upgrade) - " + passiveFights.fifthFightCost + " 灵石");
 			tooltipAnchor.tooltip();
 
 		}
@@ -372,7 +372,7 @@ function passiveFightSix(){
 		} else {
 
 			var tooltipAnchor = $('#sixthFightPassive');
-			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 6 seconds (per upgrade) - " + passiveFights.sixthFightCost + " S.S.");
+			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 6 seconds (per upgrade) - " + passiveFights.sixthFightCost + " 灵石");
 			tooltipAnchor.tooltip();
 
 		}
@@ -407,7 +407,7 @@ function passiveFightSeven(){
 		} else {
 
 			var tooltipAnchor = $('#seventhFightPassive');
-			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 7 seconds (per upgrade) - " + passiveFights.seventhFightCost + " S.S.");
+			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 7 seconds (per upgrade) - " + passiveFights.seventhFightCost + " 灵石");
 			tooltipAnchor.tooltip();
 
 		}
@@ -442,7 +442,7 @@ function passiveFightEight(){
 		} else {
 
 			var tooltipAnchor = $('#eighthFightPassive');
-			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 8 seconds (per upgrade) - " + passiveFights.eighthFightCost + " S.S.");
+			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 8 seconds (per upgrade) - " + passiveFights.eighthFightCost + " 灵石");
 			tooltipAnchor.tooltip();
 
 		}
@@ -477,7 +477,7 @@ function passiveFightNine(){
 		} else {
 
 			var tooltipAnchor = $('#ninthFightPassive');
-			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 9 seconds (per upgrade) - " + passiveFights.ninthFightCost + " S.S.");
+			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 9 seconds (per upgrade) - " + passiveFights.ninthFightCost + " 灵石");
 			tooltipAnchor.tooltip();
 
 		}
@@ -512,7 +512,7 @@ function passiveFightTen(){
 		} else {
 
 			var tooltipAnchor = $('#tenthFightPassive');
-			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 10 seconds (per upgrade) - " + passiveFights.tenthFightCost + " S.S.");
+			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 10 seconds (per upgrade) - " + passiveFights.tenthFightCost + " 灵石");
 			tooltipAnchor.tooltip();
 
 		}
@@ -547,7 +547,7 @@ function passiveFightEleven(){
 		} else {
 
 			var tooltipAnchor = $('#eleventhFightPassive');
-			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 11 seconds (per upgrade) - " + passiveFights.eleventhFightCost + " S.S.");
+			tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 11 seconds (per upgrade) - " + passiveFights.eleventhFightCost + " 灵石");
 			tooltipAnchor.tooltip();
 
 		}
@@ -646,7 +646,7 @@ function legacyScreenUpdate(){
 	document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 	document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 	document.getElementById("meditate").src = "monktransparent.png";
-	document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " S.S.";
+	document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " 灵石";
 	if (clickId != null){ clearInterval(clickId); }
 	var tooltipAnchor = $('#passiveClickBtn');
 	tooltipAnchor.attr('data-tooltip', "每秒获得被动点击 - 成本: " + clickCost + " 灵石, 当前: " + clickPerSecond + " cps");
@@ -677,37 +677,37 @@ function legacyScreenUpdate(){
 	passiveFights.eleventhFightBought = 0;
 
 	var tooltipAnchor = $('#firstFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.firstFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.firstFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 	var tooltipAnchor = $('#secondFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.secondFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.secondFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 	var tooltipAnchor = $('#thirdFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.thirdFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.thirdFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 	var tooltipAnchor = $('#fourthFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.fourthFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.fourthFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 	var tooltipAnchor = $('#fifthFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.fifthFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.fifthFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 	var tooltipAnchor = $('#sixthFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.sixthFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.sixthFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 	var tooltipAnchor = $('#seventhFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.seventhFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.seventhFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 	var tooltipAnchor = $('#eighthFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.eighthFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.eighthFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 	var tooltipAnchor = $('#ninthFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.ninthFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.ninthFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 	var tooltipAnchor = $('#tenthFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.tenthFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.tenthFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 	var tooltipAnchor = $('#eleventhFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.eleventhFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.eleventhFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 
 	if (passiveFights.passFightOneInterval != null){
@@ -1745,7 +1745,7 @@ function Fight(fightId){
 			console.log("defeat");
 
 			document.getElementById(defeatName).setAttribute("style", "display: inline;");
-			fightDefeat = " You've been defeated!";
+			fightDefeat = " 你被打败了！";
 			document.getElementById(defeatName).innerHTML = fightDefeat;
 
 		}
@@ -1766,7 +1766,7 @@ function Fight(fightId){
 			console.log("defeat");
 
 			document.getElementById(defeatName).setAttribute("style", "display: inline;");
-			fightDefeat = " You've been defeated!";
+			fightDefeat = " 你被打败了！";
 			document.getElementById(defeatName).innerHTML = fightDefeat;
 
 		}
@@ -1787,7 +1787,7 @@ function Fight(fightId){
 			console.log("defeat");
 
 			document.getElementById(defeatName).setAttribute("style", "display: inline;");
-			fightDefeat = " You've been defeated!";
+			fightDefeat = " 你被打败了！";
 			document.getElementById(defeatName).innerHTML = fightDefeat;
 
 		}
@@ -1797,7 +1797,7 @@ function Fight(fightId){
 		console.log("defeat");
 
 		document.getElementById(defeatName).setAttribute("style", "display: inline;");
-		fightDefeat = " You've been defeated!";
+		fightDefeat = " 你被打败了！";
 		document.getElementById(defeatName).innerHTML = fightDefeat;
 
 	}
@@ -2388,7 +2388,7 @@ function updateValues(){
 		tooltipAnchor.attr('data-tooltip', "Gain passive clicks per second - cost: " + clickCost + " spirit stones, current: " + clickPerInterval + " cps");
 		tooltipAnchor.tooltip();
 
-	document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " S.S.";
+	document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " 灵石";
 
 	if (clickPerInterval >= 1){
 
@@ -2502,7 +2502,7 @@ function passFightUpdate(){
 	} else if (passiveFights.firstFightBought > 0) {
 
 	var tooltipAnchor = $('#firstFightPassive');
-	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.firstFightCost + " S.S.");
+	tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every second (per upgrade) - " + passiveFights.firstFightCost + " 灵石");
 	tooltipAnchor.tooltip();
 
 	passiveFights.passFightOneInterval =  setInterval(function(){
@@ -2523,7 +2523,7 @@ function passFightUpdate(){
 	} else if (passiveFights.secondFightBought > 0) {
 
 		var tooltipAnchor = $('#secondFightPassive');
-		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 2 seconds (per upgrade) - " + passiveFights.secondFightCost + " S.S.");
+		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 2 seconds (per upgrade) - " + passiveFights.secondFightCost + " 灵石");
 		tooltipAnchor.tooltip();
 
 		passiveFights.passFightTwoInterval =  setInterval(function(){
@@ -2544,7 +2544,7 @@ function passFightUpdate(){
 	} else if (passiveFights.thirdFightBought > 0) {
 
 		var tooltipAnchor = $('#thirdFightPassive');
-		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 3 seconds (per upgrade) - " + passiveFights.thirdFightCost + " S.S.");
+		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 3 seconds (per upgrade) - " + passiveFights.thirdFightCost + " 灵石");
 		tooltipAnchor.tooltip();
 
 		passiveFights.passFightThreeInterval =  setInterval(function(){
@@ -2565,7 +2565,7 @@ function passFightUpdate(){
 	} else if (passiveFights.fourthFightBought > 0) {
 
 		var tooltipAnchor = $('#fourthFightPassive');
-		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 4 seconds (per upgrade) - " + passiveFights.fourthFightCost + " S.S.");
+		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 4 seconds (per upgrade) - " + passiveFights.fourthFightCost + " 灵石");
 		tooltipAnchor.tooltip();
 
 		passiveFights.passFightFourInterval =  setInterval(function(){
@@ -2586,7 +2586,7 @@ function passFightUpdate(){
 	} else if (passiveFights.fifthFightBought > 0) {
 
 		var tooltipAnchor = $('#fifthFightPassive');
-		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 5 seconds (per upgrade) - " + passiveFights.fifthFightCost + " S.S.");
+		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 5 seconds (per upgrade) - " + passiveFights.fifthFightCost + " 灵石");
 		tooltipAnchor.tooltip();
 
 		passiveFights.passFightFiveInterval =  setInterval(function(){
@@ -2607,7 +2607,7 @@ function passFightUpdate(){
 	} else if (passiveFights.sixthFightBought > 0) {
 
 		var tooltipAnchor = $('#sixthFightPassive');
-		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 6 seconds (per upgrade) - " + passiveFights.sixthFightCost + " S.S.");
+		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 6 seconds (per upgrade) - " + passiveFights.sixthFightCost + " 灵石");
 		tooltipAnchor.tooltip();
 
 		passiveFights.passFightSixInterval =  setInterval(function(){
@@ -2628,7 +2628,7 @@ function passFightUpdate(){
 	} else if (passiveFights.seventhFightBought > 0) {
 
 		var tooltipAnchor = $('#seventhFightPassive');
-		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every  7 seconds (per upgrade) - " + passiveFights.seventhFightCost + " S.S.");
+		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every  7 seconds (per upgrade) - " + passiveFights.seventhFightCost + " 灵石");
 		tooltipAnchor.tooltip();
 
 		passiveFights.passFightSevenInterval =  setInterval(function(){
@@ -2649,7 +2649,7 @@ function passFightUpdate(){
 	} else if (passiveFights.eighthFightBought > 0) {
 
 		var tooltipAnchor = $('#eighthFightPassive');
-		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 8 seconds (per upgrade) - " + passiveFights.eighthFightCost + " S.S.");
+		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 8 seconds (per upgrade) - " + passiveFights.eighthFightCost + " 灵石");
 		tooltipAnchor.tooltip();
 
 		passiveFights.passFightEightInterval =  setInterval(function(){
@@ -2670,7 +2670,7 @@ function passFightUpdate(){
 	} else if (passiveFights.ninthFightBought > 0) {
 
 		var tooltipAnchor = $('#ninthFightPassive');
-		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 9 seconds (per upgrade) - " + passiveFights.ninthFightCost + " S.S.");
+		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 9 seconds (per upgrade) - " + passiveFights.ninthFightCost + " 灵石");
 		tooltipAnchor.tooltip();
 
 		passiveFights.passFightNineInterval =  setInterval(function(){
@@ -2691,7 +2691,7 @@ function passFightUpdate(){
 	} else if (passiveFights.tenthFightBought > 0) {
 
 		var tooltipAnchor = $('#tenthFightPassive');
-		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 10 seconds (per upgrade) - " + passiveFights.tenthFightCost + " S.S.");
+		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 10 seconds (per upgrade) - " + passiveFights.tenthFightCost + " 灵石");
 		tooltipAnchor.tooltip();
 
 		passiveFights.passFightTenInterval =  setInterval(function(){
@@ -2712,7 +2712,7 @@ function passFightUpdate(){
 	} else if (passiveFights.eleventhFightBought > 0) {
 
 		var tooltipAnchor = $('#eleventhFightPassive');
-		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 11 seconds (per upgrade) - " + passiveFights.eleventhFightCost + " S.S.");
+		tooltipAnchor.attr('data-tooltip', "Auto Fight: Does this fight automatically, once every 11 seconds (per upgrade) - " + passiveFights.eleventhFightCost + " 灵石");
 		tooltipAnchor.tooltip();
 
 		passiveFights.passFightElevenInterval =  setInterval(function(){
@@ -2949,7 +2949,7 @@ function localSave(){
 	setCookie("legacyUpgradesBought.legacyUpgradeTwentyfour", legacyUpgradesBought.legacyUpgradeTwentyfour, 1000);
 	setCookie("legacyUpgradesBought.legacyUpgradeTwentyfive", legacyUpgradesBought.legacyUpgradeTwentyfive, 1000);
 
-	document.getElementById("localSaveConfirm").innerHTML = "Saved!";
+	document.getElementById("localSaveConfirm").innerHTML = "已保存!";
 
 	console.log("Saved!");
 
