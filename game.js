@@ -98,7 +98,7 @@ function increaseXp(currentXp, incrementAmount) {
 
 	document.getElementById("progress").setAttribute("value", xp);
 
-	document.getElementById("xp").innerHTML = "Xp: " + convertNumbers(currentXp);
+	document.getElementById("xp").innerHTML = "经验: " + convertNumbers(currentXp);
 
 	//doAllWinChance();
 
@@ -125,7 +125,7 @@ function passiveClicks(){
 
 		money = money - clickCost;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		clickCost = clickCost * 2;
 
@@ -133,7 +133,7 @@ function passiveClicks(){
 
 		clickPerSecond = (clickPerInterval / (baseClickInterval / 1000));
 
-		document.getElementById("passiveClickBtn").innerHTML = "Secluded Meditation - " + clickCost + " S.S.";
+		document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " S.S.";
 
 		var tooltipAnchor = $('#passiveClickBtn');
 		tooltipAnchor.attr('data-tooltip', "Gain passive clicks per second - cost: " + clickCost + " spirit stones, current: " + clickPerSecond.toFixed(2) + " cps");
@@ -151,7 +151,7 @@ function passiveClicks(){
 
 		money = money - clickCost;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		clickCost = clickCost * 2;
 
@@ -162,7 +162,7 @@ function passiveClicks(){
 		tooltipAnchor.attr('data-tooltip', "Gain passive clicks per second - cost: " + clickCost + " spirit stones, current: " + clickPerSecond.toFixed(2) + " cps");
 		tooltipAnchor.tooltip();
 
-		document.getElementById("passiveClickBtn").innerHTML = "Secluded Meditation - " + clickCost + " S.S.";
+		document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " S.S.";
 
 		clickInterval = (baseClickInterval / clickPerInterval);
 
@@ -188,7 +188,7 @@ function passiveFightOne(){
 
 		passiveFights.firstFightCost = passiveFights.firstFightCost * 2;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		if(passiveFights.firstFightBought >= passiveFights.maxPassiveFights) {
 
@@ -223,7 +223,7 @@ function passiveFightTwo(){
 
 		passiveFights.secondFightCost = passiveFights.secondFightCost * 2;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		if(passiveFights.secondFightBought >= passiveFights.maxPassiveFights) {
 
@@ -258,7 +258,7 @@ function passiveFightThree(){
 
 		passiveFights.thirdFightCost = passiveFights.thirdFightCost * 2;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		if(passiveFights.thirdFightBought >= passiveFights.maxPassiveFights) {
 
@@ -293,7 +293,7 @@ function passiveFightFour(){
 
 		passiveFights.fourthFightCost = passiveFights.fourthFightCost * 2;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		if(passiveFights.fourthFightBought >= passiveFights.maxPassiveFights) {
 
@@ -328,7 +328,7 @@ function passiveFightFive(){
 
 		passiveFights.fifthFightCost = passiveFights.fifthFightCost * 2;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		if(passiveFights.fifthFightBought >= passiveFights.maxPassiveFights) {
 
@@ -363,7 +363,7 @@ function passiveFightSix(){
 
 		passiveFights.sixthFightCost = passiveFights.sixthFightCost * 2;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		if(passiveFights.sixthFightBought >= passiveFights.maxPassiveFights) {
 
@@ -398,7 +398,7 @@ function passiveFightSeven(){
 
 		passiveFights.seventhFightCost = passiveFights.seventhFightCost * 2;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		if(passiveFights.seventhFightBought >= passiveFights.maxPassiveFights) {
 
@@ -433,7 +433,7 @@ function passiveFightEight(){
 
 		passiveFights.eighthFightCost = passiveFights.eighthFightCost * 2;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		if(passiveFights.eighthFightBought >= passiveFights.maxPassiveFights) {
 
@@ -468,7 +468,7 @@ function passiveFightNine(){
 
 		passiveFights.ninthFightCost = passiveFights.ninthFightCost * 2;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		if(passiveFights.ninthFightBought >= passiveFights.maxPassiveFights) {
 
@@ -503,7 +503,7 @@ function passiveFightTen(){
 
 		passiveFights.tenthFightCost = passiveFights.tenthFightCost * 2;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		if(passiveFights.tenthFightBought >= passiveFights.maxPassiveFights) {
 
@@ -538,7 +538,7 @@ function passiveFightEleven(){
 
 		passiveFights.eleventhFightCost = passiveFights.eleventhFightCost * 2;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		if(passiveFights.eleventhFightBought >= passiveFights.maxPassiveFights) {
 
@@ -573,7 +573,7 @@ function rankup(){
 
 		xp = xp - document.getElementById("progress").getAttribute("max");
 
-		document.getElementById("xp").innerHTML = "Xp: " + convertNumbers(xp);
+		document.getElementById("xp").innerHTML = "经验: " + convertNumbers(xp);
 
 		rankPowerChange();
 
@@ -626,7 +626,7 @@ function legacy(){
 	passiveFights.maxPassiveFights = 1;
 	legacyScreenUpdate();
 	calculateLegacyBoost();
-	document.getElementById("displayClickPower").innerHTML = "Your current xp per click is: " + convertNumbers(incrementAmount);
+	document.getElementById("displayClickPower").innerHTML = "您当前每次点击获得的经验是： " + convertNumbers(incrementAmount);
 	document.getElementById("displayClickPowerLegacy").setAttribute("style", "text-align: center;");
 	document.getElementById("displayClickPowerLegacy").innerHTML = "Your current xp per click with legacy bonus is: " + convertNumbers(incrementAmount * boostFactor);
 	legacyUpgrades();
@@ -636,20 +636,20 @@ function legacy(){
 function legacyScreenUpdate(){
 
 	console.log("Updating Screen");
-	document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
-	document.getElementById("newLegacyPoints").innerHTML = "Legacy Points (Gained Upon Reset): " + convertNumbers(newLegacyPoints);
-	document.getElementById("xp").innerHTML = "XP: " + convertNumbers(xp);
-	document.getElementById("currentRealm").innerHTML = "Mortal";
+	document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
+	document.getElementById("newLegacyPoints").innerHTML = "遗物点数 (重置后获得): " + convertNumbers(newLegacyPoints);
+	document.getElementById("xp").innerHTML = "经验: " + convertNumbers(xp);
+	document.getElementById("currentRealm").innerHTML = "凡人";
 	document.getElementById("progress").setAttribute("value", "0");
 	document.getElementById("progress").setAttribute("max", "1");
 	document.getElementById("rankupButton").setAttribute("style", "display: none;");
-	document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
-	document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+	document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
+	document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 	document.getElementById("meditate").src = "monktransparent.png";
-	document.getElementById("passiveClickBtn").innerHTML = "Secluded Meditation - " + clickCost + " S.S.";
+	document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " S.S.";
 	if (clickId != null){ clearInterval(clickId); }
 	var tooltipAnchor = $('#passiveClickBtn');
-	tooltipAnchor.attr('data-tooltip', "Gain passive clicks per second - cost: " + clickCost + " spirit stones, current: " + clickPerSecond + " cps");
+	tooltipAnchor.attr('data-tooltip', "每秒获得被动点击 - 成本: " + clickCost + " 灵石, 当前: " + clickPerSecond + " cps");
 	tooltipAnchor.tooltip();
 
 	passiveFights.firstFightCost = 10;
@@ -1727,7 +1727,7 @@ function Fight(fightId){
 
 		money = money + fightReward;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 	} else if (power >= (fightPower * 0.95)) {
 
@@ -1738,7 +1738,7 @@ function Fight(fightId){
 
 			money = money + fightReward;
 
-			document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+			document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		} else {
 
@@ -1759,7 +1759,7 @@ function Fight(fightId){
 
 			money = money + fightReward;
 
-			document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+			document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		} else {
 
@@ -1780,7 +1780,7 @@ function Fight(fightId){
 
 			money = money + fightReward;
 
-			document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+			document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		} else {
 
@@ -1816,13 +1816,13 @@ function Train(trainId){
 
 		money = money - trainCost;
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		incrementAmount = incrementAmount + trainReward;
 
 		document.getElementById(trainCostName).innerHTML = convertNumbers(trainCost * 2);
 
-		document.getElementById("displayClickPower").innerHTML = "YYour current xp per click is: " + convertNumbers(incrementAmount);
+		document.getElementById("displayClickPower").innerHTML = "Y您当前每次点击获得的经验是： " + convertNumbers(incrementAmount);
 
 		if (legacyPoints > 0){
 
@@ -1843,11 +1843,11 @@ function firstSwordPurchase(){
 
 		money = money - parseInt(document.getElementById("firstPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		power = power + 0.15;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 		swordBonus = swordBonus + 0.15;
 
@@ -1862,11 +1862,11 @@ function firstManualPurchase(){
 
 		money = money - parseInt(document.getElementById("secondPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		power = power + 0.15;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 	}
 
@@ -1880,7 +1880,7 @@ function firstCultivationPurchase(){
 
 		money = money - parseInt(document.getElementById("thirdPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		cultivationTechnique = cultivationTechnique + 0.1;
 
@@ -1896,11 +1896,11 @@ function secondSwordPurchase(){
 
 		money = money - parseInt(document.getElementById("fourthPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		power = power + 0.15;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 		swordBonus = swordBonus + 0.15;
 
@@ -1915,11 +1915,11 @@ function secondManualPurchase(){
 
 		money = money - parseInt(document.getElementById("fifthPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		power = power + 0.15;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 	}
 
@@ -1933,7 +1933,7 @@ function secondCultivationPurchase(){
 
 		money = money - parseInt(document.getElementById("sixthPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		cultivationTechnique = cultivationTechnique + 0.1;
 
@@ -1949,11 +1949,11 @@ function thirdSwordPurchase(){
 
 		money = money - parseInt(document.getElementById("seventhPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		power = power + 0.15;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 		swordBonus = swordBonus + 0.15;
 
@@ -1968,11 +1968,11 @@ function thirdManualPurchase(){
 
 		money = money - parseInt(document.getElementById("eighthPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		power = power + 0.15;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 	}
 
@@ -1986,7 +1986,7 @@ function thirdCultivationPurchase(){
 
 		money = money - parseInt(document.getElementById("ninthPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		cultivationTechnique = cultivationTechnique + 0.1;
 
@@ -2002,11 +2002,11 @@ function fourthSwordPurchase(){
 
 		money = money - parseInt(document.getElementById("tenthPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		power = power + 0.15;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 		swordBonus = swordBonus + 0.15;
 
@@ -2021,11 +2021,11 @@ function fourthManualPurchase(){
 
 		money = money - parseInt(document.getElementById("eleventhPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		power = power + 0.15;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 	}
 
@@ -2039,7 +2039,7 @@ function fourthCultivationPurchase(){
 
 		money = money - parseInt(document.getElementById("twelfthPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		cultivationTechnique = cultivationTechnique + 0.1;
 
@@ -2055,11 +2055,11 @@ function fifthSwordPurchase(){
 
 		money = money - parseInt(document.getElementById("thirteenthPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		power = power + 0.15;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 		swordBonus = swordBonus + 0.15;
 
@@ -2074,11 +2074,11 @@ function fifthManualPurchase(){
 
 		money = money - parseInt(document.getElementById("fourteenthPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		power = power + 0.15;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 	}
 
@@ -2092,7 +2092,7 @@ function fifthCultivationPurchase(){
 
 		money = money - parseInt(document.getElementById("fifteenthPurchaseCost").innerHTML);
 
-		document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+		document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 
 		cultivationTechnique = cultivationTechnique + 0.1;
 
@@ -2112,7 +2112,7 @@ function rankPowerChange(){
 
 		power = power + 0.5 + cultivationTechnique;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 
 	} else if (document.getElementById("progress").getAttribute("max").split("", 1) == 3) {
@@ -2121,7 +2121,7 @@ function rankPowerChange(){
 
 		power = power + 0.3 + cultivationTechnique;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 	} else if (document.getElementById("progress").getAttribute("max").split("", 1) == 5) {
 
@@ -2129,7 +2129,7 @@ function rankPowerChange(){
 
 		power = power + 0.3 + cultivationTechnique;
 
-		document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
+		document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
 
 	}
 
@@ -2376,19 +2376,19 @@ function loadLocalSave(){
 
 function updateValues(){
 
-	document.getElementById("xp").innerHTML = "Xp: " + convertNumbers(xp);
-	document.getElementById("legacyPoints").innerHTML = "Legacy Points: " + convertNumbers(legacyPoints);
-	document.getElementById("newLegacyPoints").innerHTML = "Legacy Points (Gained Upon Reset): " + convertNumbers(newLegacyPoints);
-	document.getElementById("currentPower").innerHTML = "Power: " + convertNumbers(power);
-	document.getElementById("money").innerHTML = "Spirit Stones: " + convertNumbers(money);
+	document.getElementById("xp").innerHTML = "经验: " + convertNumbers(xp);
+	document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
+	document.getElementById("newLegacyPoints").innerHTML = "遗物点数 (重置后获得): " + convertNumbers(newLegacyPoints);
+	document.getElementById("currentPower").innerHTML = "修为: " + convertNumbers(power);
+	document.getElementById("money").innerHTML = "灵石: " + convertNumbers(money);
 	document.getElementById("progress").setAttribute("value", xp);
-	document.getElementById("displayClickPower").innerHTML = "Your current xp per click is: " + convertNumbers(incrementAmount);
+	document.getElementById("displayClickPower").innerHTML = "您当前每次点击获得的经验是： " + convertNumbers(incrementAmount);
 	// fixing tooltip
 	var tooltipAnchor = $('#passiveClickBtn');
 		tooltipAnchor.attr('data-tooltip', "Gain passive clicks per second - cost: " + clickCost + " spirit stones, current: " + clickPerInterval + " cps");
 		tooltipAnchor.tooltip();
 
-	document.getElementById("passiveClickBtn").innerHTML = "Secluded Meditation - " + clickCost + " S.S.";
+	document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " S.S.";
 
 	if (clickPerInterval >= 1){
 

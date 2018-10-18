@@ -38,13 +38,13 @@
 
             <a onclick = "rankup()" id = "rankupButton" class="waves-effect waves-light btn" style = "display: none;">进阶</a>
 
-			<h6 style = "text-align: center;" id = "currentPower">Power: 0.1</h6>
+			<h6 style = "text-align: center;" id = "currentPower">修为: 0.1</h6>
             <h6 style = "text-align: center;" id = "xp">经验: 0</h6>
             <h6 style = "text-align: center;" id = "money">灵石: 0</h6>
 
 			<img onclick = "increaseXp(xp, incrementAmount)" style = "width: 75%; display: block; margin-left: auto; margin-right: auto; outline: none;" type = "image" src = "monktransparent.png" id = "meditate"></img>
 
-            <a onclick="passiveClicks()" id = "passiveClickBtn" style = "width: 100%" data-position = "bottom" data-tooltip = "Gain passive clicks per second - cost: 10 spirit stones, current: 0 cps" class = "tooltipped waves-effect waves-light btn">Secluded Meditation - 10 S.S.</a>
+            <a onclick="passiveClicks()" id = "passiveClickBtn" style = "width: 100%" data-position = "bottom" data-tooltip = "Gain passive clicks per second - cost: 10 spirit stones, current: 0 cps" class = "tooltipped waves-effect waves-light btn">幽静的冥想 - 10 S.S.</a>
 
 		</div>
 
@@ -63,11 +63,11 @@
 
 					 <br />
 
-					 <a onclick="localSave();" id = "localSaveBtn" style = "width: 40%;" data-position = "right" data-tooltip = "Do a manual, local, save - the game auto saves every 60 seconds" class = "tooltipped waves-effect waves-light btn">Local Save</a> <p id = "localSaveConfirm" style = "display: inline;"></p>
+					 <a onclick="localSave();" id = "localSaveBtn" style = "width: 40%;" data-position = "right" data-tooltip = "Do a manual, local, save - the game auto saves every 60 seconds" class = "tooltipped waves-effect waves-light btn">本地保存</a> <p id = "localSaveConfirm" style = "display: inline;"></p>
 
 					 <br /> <br />
 
-					 <a onclick="stopFloating();" id = "stopFloatingBtn" style = "width: 40%;" data-position = "right" data-tooltip = "This is a temporary image change, and will need to be redone each legacy" class = "tooltipped waves-effect waves-light btn">Stop Floating!</a>
+					 <a onclick="stopFloating();" id = "stopFloatingBtn" style = "width: 40%;" data-position = "right" data-tooltip = "This is a temporary image change, and will need to be redone each legacy" class = "tooltipped waves-effect waves-light btn">停止浮动!</a>
 
 					 <br /> <br />
 
@@ -97,8 +97,8 @@
           				<tr>
 				              <th>战斗</th>
                       <th>+</th>
-				              <th>Enemy Power Level</th>
-				              <th>Reward (S.S.)</th>
+				              <th>敌人的修为等级</th>
+				              <th>奖励 (S.S.)</th>
 				        </tr>
 				    </thead>
 
@@ -177,7 +177,7 @@
 
      		 <div id = "train">
 
-					<h5 id = "displayClickPower" style = "text-align: center;">Your current xp per click is: 0.1</h5>
+					<h5 id = "displayClickPower" style = "text-align: center;">您当前每次点击获得的经验是： 0.1</h5>
 					<h5 id = "displayClickPowerLegacy" style = "display:none;">Your current xp per click with legacy bonus is: 0.1</h5>
 
      		 	<table id = "trainTable">
@@ -427,9 +427,9 @@
      		 </div>
              <div id = "legacy">
 
-							 <h4 style = "text-align: center;" id = "legacyRequirement">Reach Late Xiantian Stage to Unlock Legacy!</h4>
+							 <h4 style = "text-align: center;" id = "legacyRequirement">达到后期仙天阶段解锁遗产!</h4>
 
-							 <h4 style = "text-align: center; display: none;" data-position = "bottom" data-tooltip = "Each legacy point grants a 1% boost to xp generation. Spent Legacy Points do not grant this boost. Legacy upgrades are permanent and last through legacies" class = "tooltipped" id = "legacyPoints">Legacy Points: 0</h4>
+							 <h4 style = "text-align: center; display: none;" data-position = "bottom" data-tooltip = "Each legacy point grants a 1% boost to xp generation. Spent Legacy Points do not grant this boost. Legacy upgrades are permanent and last through legacies" class = "tooltipped" id = "legacyPoints">遗物点数: 0</h4>
 
 							 <h5 style = "text-align: center; display: none;" id = "newLegacyPoints">Legacy Points (Gained Upon Reset): 0</h4>
 
