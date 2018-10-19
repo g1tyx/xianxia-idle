@@ -2176,7 +2176,7 @@ function rankPowerChange(){
 	console.log(secondHalf);
 	console.log(document.getElementById("progress").getAttribute("max"));
 
-	document.getElementById("currentRealm").innerHTML = firstHalf + secondHalf;
+	document.getElementById("currentRealm").innerHTML = secondHalf + firstHalf;
 
 }
 
