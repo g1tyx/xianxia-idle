@@ -136,7 +136,7 @@ function passiveClicks(){
 		document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " 灵石";
 
 		var tooltipAnchor = $('#passiveClickBtn');
-		tooltipAnchor.attr('data-tooltip', "每秒获得被动点击 - 成本: " + clickCost + " 灵石, 当前: " + clickPerSecond.toFixed(2) + " cps");
+		tooltipAnchor.attr('data-tooltip', "每秒会自动点击 - 成本: " + clickCost + " 灵石, 当前: " + clickPerSecond.toFixed(2) + " 次/秒");
 		tooltipAnchor.tooltip();
 
 		clickId = setInterval(function(){
@@ -159,7 +159,7 @@ function passiveClicks(){
 		clickPerSecond = (clickPerInterval / (baseClickInterval / 1000));
 
 		var tooltipAnchor = $('#passiveClickBtn');
-		tooltipAnchor.attr('data-tooltip', "每秒获得被动点击 - 成本: " + clickCost + " 灵石, 当前:  " + clickPerSecond.toFixed(2) + " cps");
+		tooltipAnchor.attr('data-tooltip', "每秒会自动点击 - 成本: " + clickCost + " 灵石, 当前:  " + clickPerSecond.toFixed(2) + " 次/秒");
 		tooltipAnchor.tooltip();
 
 		document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " 灵石";
@@ -577,7 +577,7 @@ function rankup(){
 
 		rankPowerChange();
 
-		if (document.getElementById("currentRealm").innerHTML == "Late Xiantian"){
+		if (document.getElementById("currentRealm").innerHTML == "先天后期"){
 
 			legacyUnlock();
 
@@ -639,7 +639,7 @@ function legacyScreenUpdate(){
 	document.getElementById("legacyPoints").innerHTML = "遗物点数: " + convertNumbers(legacyPoints);
 	document.getElementById("newLegacyPoints").innerHTML = "遗物点数 (重置后获得): " + convertNumbers(newLegacyPoints);
 	document.getElementById("xp").innerHTML = "经验: " + convertNumbers(xp);
-	document.getElementById("currentRealm").innerHTML = "Mortal";
+	document.getElementById("currentRealm").innerHTML = "凡人";
 	document.getElementById("progress").setAttribute("value", "0");
 	document.getElementById("progress").setAttribute("max", "1");
 	document.getElementById("rankupButton").setAttribute("style", "display: none;");
@@ -649,7 +649,7 @@ function legacyScreenUpdate(){
 	document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " 灵石";
 	if (clickId != null){ clearInterval(clickId); }
 	var tooltipAnchor = $('#passiveClickBtn');
-	tooltipAnchor.attr('data-tooltip', "每秒获得被动点击 - 成本: " + clickCost + " 灵石, 当前: " + clickPerSecond + " cps");
+	tooltipAnchor.attr('data-tooltip', "每秒会自动点击 - 成本: " + clickCost + " 灵石, 当前: " + clickPerSecond + " 次/秒");
 	tooltipAnchor.tooltip();
 
 	passiveFights.firstFightCost = 10;
@@ -1620,15 +1620,15 @@ function legacyPointCalculation(){
 
 function imageChange(){
 
-	if (document.getElementById("currentRealm").innerHTML == "Early Xiantian"){
+	if (document.getElementById("currentRealm").innerHTML == "先天前期"){
 
 		document.getElementById("meditate").src = "monk2transparent.png";
 
-	} else if (document.getElementById("currentRealm").innerHTML == "Early Jindan"){
+	} else if (document.getElementById("currentRealm").innerHTML == "金丹前期"){
 
 		document.getElementById("meditate").src = "(3)monkfloat4.gif";
 
-	} else if (document.getElementById("currentRealm").innerHTML == "Early Dongxu"){
+	} else if (document.getElementById("currentRealm").innerHTML == "洞虚前期"){
 
 		document.getElementById("meditate").src = "(4)monkglow.gif";
 
@@ -2108,7 +2108,7 @@ function rankPowerChange(){
 
 	if (document.getElementById("progress").getAttribute("max").split("", 1) == 1) {
 
-		firstHalf = "Early ";
+		firstHalf = "前期 ";
 
 		power = power + 0.5 + cultivationTechnique;
 
@@ -2117,7 +2117,7 @@ function rankPowerChange(){
 
 	} else if (document.getElementById("progress").getAttribute("max").split("", 1) == 3) {
 
-		firstHalf = "Middle ";
+		firstHalf = "中期 ";
 
 		power = power + 0.3 + cultivationTechnique;
 
@@ -2125,7 +2125,7 @@ function rankPowerChange(){
 
 	} else if (document.getElementById("progress").getAttribute("max").split("", 1) == 5) {
 
-		firstHalf = "Late ";
+		firstHalf = "后期 ";
 
 		power = power + 0.3 + cultivationTechnique;
 
@@ -2139,35 +2139,35 @@ function rankPowerChange(){
 
 	if (document.getElementById("progress").getAttribute("max") < 10) {
 
-		secondHalf = "Houtian";
+		secondHalf = "后天";
 
 	} else if (document.getElementById("progress").getAttribute("max") < 1000){
 
-		secondHalf = "Xiantian";
+		secondHalf = "先天";
 
 	} else if (document.getElementById("progress").getAttribute("max") < 100000){
 
-		secondHalf = "Jindan";
+		secondHalf = "金丹";
 
 	} else if (document.getElementById("progress").getAttribute("max") < 10000000){
 
-		secondHalf = "Yuanying";
+		secondHalf = "元婴";
 
 	} else if (document.getElementById("progress").getAttribute("max") < 1000000000){
 
-		secondHalf = "Dongxu";
+		secondHalf = "洞虚";
 
 	} else if (document.getElementById("progress").getAttribute("max") < 100000000000){
 
-		secondHalf = "Kongming";
+		secondHalf = "空冥";
 
 	} else if (document.getElementById("progress").getAttribute("max") < 100000000000000){
 
-		secondHalf = "Dujie";
+		secondHalf = "渡劫";
 
 	} else if (document.getElementById("progress").getAttribute("max") < 1000000000000000){
 
-		secondHalf = "Dacheng";
+		secondHalf = "大成";
 
 		firstHalf = "";
 
@@ -2385,7 +2385,7 @@ function updateValues(){
 	document.getElementById("displayClickPower").innerHTML = "您当前每次点击获得的经验是： " + convertNumbers(incrementAmount);
 	// fixing tooltip
 	var tooltipAnchor = $('#passiveClickBtn');
-		tooltipAnchor.attr('data-tooltip', "每秒获得被动点击 - 成本: " + clickCost + " 灵石, 当前:  " + clickPerInterval + " cps");
+		tooltipAnchor.attr('data-tooltip', "每秒会自动点击 - 成本: " + clickCost + " 灵石, 当前:  " + clickPerInterval + " 次/秒");
 		tooltipAnchor.tooltip();
 
 	document.getElementById("passiveClickBtn").innerHTML = "幽静的冥想 - " + clickCost + " 灵石";
