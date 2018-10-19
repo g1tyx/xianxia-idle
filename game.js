@@ -628,7 +628,7 @@ function legacy(){
 	calculateLegacyBoost();
 	document.getElementById("displayClickPower").innerHTML = "您当前每次点击获得的经验是： " + convertNumbers(incrementAmount);
 	document.getElementById("displayClickPowerLegacy").setAttribute("style", "text-align: center;");
-	document.getElementById("displayClickPowerLegacy").innerHTML = "您当前的每次点击经验与遗物奖励是: " + convertNumbers(incrementAmount * boostFactor);
+	document.getElementById("displayClickPowerLegacy").innerHTML = "在遗物加成后您每次点击的经验是: " + convertNumbers(incrementAmount * boostFactor);
 	legacyUpgrades();
 
 }
@@ -1827,7 +1827,7 @@ function Train(trainId){
 		if (legacyPoints > 0){
 
 			document.getElementById("displayClickPowerLegacy").setAttribute("style", "text-align: center;");
-			document.getElementById("displayClickPowerLegacy").innerHTML = "您当前的每次点击经验与遗物奖励是: " + convertNumbers(incrementAmount * boostFactor);
+			document.getElementById("displayClickPowerLegacy").innerHTML = "在遗物加成后您每次点击的经验是: " + convertNumbers(incrementAmount * boostFactor);
 
 		}
 
@@ -2367,7 +2367,7 @@ function loadLocalSave(){
 
 		legacyUnlock();
 		document.getElementById("displayClickPowerLegacy").setAttribute("style", "text-align: center;");
-		document.getElementById("displayClickPowerLegacy").innerHTML = "您当前的每次点击经验与遗物奖励是: " + (incrementAmount * boostFactor).toFixed(3);
+		document.getElementById("displayClickPowerLegacy").innerHTML = "在遗物加成后您每次点击的经验是: " + (incrementAmount * boostFactor).toFixed(3);
 		updateLegacyTable();
 
 	}
