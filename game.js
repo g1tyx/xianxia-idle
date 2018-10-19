@@ -778,17 +778,17 @@ function legacyScreenUpdate(){
 	document.getElementById("tenthFightPassive").setAttribute("style", "display: block;");
 	document.getElementById("eleventhFightPassive").setAttribute("style", "display: block;");
 
-	document.getElementById("firstTrainCost").innerHTML = 1;
-	document.getElementById("secondTrainCost").innerHTML = 10;
-	document.getElementById("thirdTrainCost").innerHTML = 1e2;
-	document.getElementById("fourthTrainCost").innerHTML = 1e3;
-	document.getElementById("fifthTrainCost").innerHTML = 1e4;
-	document.getElementById("sixthTrainCost").innerHTML = 1e5;
-	document.getElementById("seventhTrainCost").innerHTML = 1e6;
-	document.getElementById("eighthTrainCost").innerHTML = 1e7;
-	document.getElementById("ninthTrainCost").innerHTML = 1e8;
-	document.getElementById("tenthTrainCost").innerHTML = 1e9;
-	document.getElementById("eleventhTrainCost").innerHTML = 1e10;
+	document.getElementById("firstTrainCost").innerHTML = convertNumbers(1);
+	document.getElementById("secondTrainCost").innerHTML = convertNumbers(10);
+	document.getElementById("thirdTrainCost").innerHTML = convertNumbers(1e+2);
+	document.getElementById("fourthTrainCost").innerHTML = convertNumbers(1e+3);
+	document.getElementById("fifthTrainCost").innerHTML = convertNumbers(1e+4);
+	document.getElementById("sixthTrainCost").innerHTML = convertNumbers(1e+5);
+	document.getElementById("seventhTrainCost").innerHTML = convertNumbers(1e+6);
+	document.getElementById("eighthTrainCost").innerHTML = convertNumbers(1e+7);
+	document.getElementById("ninthTrainCost").innerHTML = convertNumbers(1e+8);
+	document.getElementById("tenthTrainCost").innerHTML = convertNumbers(1e+9);
+	document.getElementById("eleventhTrainCost").innerHTML = convertNumbers(1e+10);
 
 	document.getElementById("firstPurchaseRow").setAttribute("style", "");
 	document.getElementById("secondPurchaseRow").setAttribute("style", "");
@@ -2247,7 +2247,7 @@ function checkCookie() {
 
     } else {
 
-				deleteLocalSave();
+		deleteLocalSave();
 
 		}
 }
@@ -2841,7 +2841,7 @@ function hardReset(){
 
 function localSave(){
 
-  setCookie("user", "0.3.1", 1000);
+ 	setCookie("user", "0.3.1", 1000);
 	setCookie("xp", xp, 1000);
 	setCookie("totalXp", totalXp, 1000);
 	setCookie("newLegacyPoints", newLegacyPoints, 1000);
@@ -2860,17 +2860,17 @@ function localSave(){
 	setCookie("tenthFightRow", document.getElementById("tenthFightRow").getAttribute("style"), 1000);
 	setCookie("eleventhFightRow", document.getElementById("eleventhFightRow").getAttribute("style"), 1000);
 
-	setCookie("firstTrainCost", parseInt(document.getElementById("firstTrainCost").innerHTML), 1000);
-	setCookie("secondTrainCost", parseInt(document.getElementById("secondTrainCost").innerHTML), 1000);
-	setCookie("thirdTrainCost", parseInt(document.getElementById("thirdTrainCost").innerHTML), 1000);
-	setCookie("fourthTrainCost", parseInt(document.getElementById("fourthTrainCost").innerHTML), 1000);
-	setCookie("fifthTrainCost", parseInt(document.getElementById("fifthTrainCost").innerHTML), 1000);
-	setCookie("sixthTrainCost", parseInt(document.getElementById("sixthTrainCost").innerHTML), 1000);
-	setCookie("seventhTrainCost", parseInt(document.getElementById("seventhTrainCost").innerHTML), 1000);
-	setCookie("eighthTrainCost", parseInt(document.getElementById("eighthTrainCost").innerHTML), 1000);
-	setCookie("ninthTrainCost", parseInt(document.getElementById("ninthTrainCost").innerHTML), 1000);
-	setCookie("tenthTrainCost", parseInt(document.getElementById("tenthTrainCost").innerHTML), 1000);
-	setCookie("eleventhTrainCost", parseInt(document.getElementById("eleventhTrainCost").innerHTML), 1000);
+	setCookie("firstTrainCost", Number(document.getElementById("firstTrainCost").innerHTML), 1000);
+	setCookie("secondTrainCost", Number(document.getElementById("secondTrainCost").innerHTML), 1000);
+	setCookie("thirdTrainCost", Number(document.getElementById("thirdTrainCost").innerHTML), 1000);
+	setCookie("fourthTrainCost", Number(document.getElementById("fourthTrainCost").innerHTML), 1000);
+	setCookie("fifthTrainCost", Number(document.getElementById("fifthTrainCost").innerHTML), 1000);
+	setCookie("sixthTrainCost", Number(document.getElementById("sixthTrainCost").innerHTML), 1000);
+	setCookie("seventhTrainCost", Number(document.getElementById("seventhTrainCost").innerHTML), 1000);
+	setCookie("eighthTrainCost", Number(document.getElementById("eighthTrainCost").innerHTML), 1000);
+	setCookie("ninthTrainCost", Number(document.getElementById("ninthTrainCost").innerHTML), 1000);
+	setCookie("tenthTrainCost", Number(document.getElementById("tenthTrainCost").innerHTML), 1000);
+	setCookie("eleventhTrainCost", Number(document.getElementById("eleventhTrainCost").innerHTML), 1000);
 
 	setCookie("eighthTrainRow", document.getElementById("eighthTrainRow").getAttribute("style"), 1000);
 	setCookie("ninthTrainRow", document.getElementById("ninthTrainRow").getAttribute("style"), 1000);
@@ -2956,6 +2956,7 @@ function localSave(){
 	setTimeout( function(){document.getElementById("localSaveConfirm").innerHTML = ""; }, 5000);
 
 	}
+
 setInterval( function() {
   setCookie("user", "0.3.1", 1000);
 	setCookie("xp", xp, 1000);
@@ -2976,17 +2977,17 @@ setInterval( function() {
 	setCookie("tenthFightRow", document.getElementById("tenthFightRow").getAttribute("style"), 1000);
 	setCookie("eleventhFightRow", document.getElementById("eleventhFightRow").getAttribute("style"), 1000);
 
-	setCookie("firstTrainCost", parseInt(document.getElementById("firstTrainCost").innerHTML), 1000);
-	setCookie("secondTrainCost", parseInt(document.getElementById("secondTrainCost").innerHTML), 1000);
-	setCookie("thirdTrainCost", parseInt(document.getElementById("thirdTrainCost").innerHTML), 1000);
-	setCookie("fourthTrainCost", parseInt(document.getElementById("fourthTrainCost").innerHTML), 1000);
-	setCookie("fifthTrainCost", parseInt(document.getElementById("fifthTrainCost").innerHTML), 1000);
-	setCookie("sixthTrainCost", parseInt(document.getElementById("sixthTrainCost").innerHTML), 1000);
-	setCookie("seventhTrainCost", parseInt(document.getElementById("seventhTrainCost").innerHTML), 1000);
-	setCookie("eighthTrainCost", parseInt(document.getElementById("eighthTrainCost").innerHTML), 1000);
-	setCookie("ninthTrainCost", parseInt(document.getElementById("ninthTrainCost").innerHTML), 1000);
-	setCookie("tenthTrainCost", parseInt(document.getElementById("tenthTrainCost").innerHTML), 1000);
-	setCookie("eleventhTrainCost", parseInt(document.getElementById("eleventhTrainCost").innerHTML), 1000);
+	setCookie("firstTrainCost", Number(document.getElementById("firstTrainCost").innerHTML), 1000);
+	setCookie("secondTrainCost", Number(document.getElementById("secondTrainCost").innerHTML), 1000);
+	setCookie("thirdTrainCost", Number(document.getElementById("thirdTrainCost").innerHTML), 1000);
+	setCookie("fourthTrainCost", Number(document.getElementById("fourthTrainCost").innerHTML), 1000);
+	setCookie("fifthTrainCost", Number(document.getElementById("fifthTrainCost").innerHTML), 1000);
+	setCookie("sixthTrainCost", Number(document.getElementById("sixthTrainCost").innerHTML), 1000);
+	setCookie("seventhTrainCost", Number(document.getElementById("seventhTrainCost").innerHTML), 1000);
+	setCookie("eighthTrainCost", Number(document.getElementById("eighthTrainCost").innerHTML), 1000);
+	setCookie("ninthTrainCost", Number(document.getElementById("ninthTrainCost").innerHTML), 1000);
+	setCookie("tenthTrainCost", Number(document.getElementById("tenthTrainCost").innerHTML), 1000);
+	setCookie("eleventhTrainCost", Number(document.getElementById("eleventhTrainCost").innerHTML), 1000);
 
 	setCookie("eighthTrainRow", document.getElementById("eighthTrainRow").getAttribute("style"), 1000);
 	setCookie("ninthTrainRow", document.getElementById("ninthTrainRow").getAttribute("style"), 1000);
