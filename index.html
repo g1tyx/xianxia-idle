@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-55391971-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-55391971-2');
+</script>
+-->
+<meta charset="utf-8" />
+		<!--Import materialize.css-->
+      	<link type="text/css" rel="stylesheet" href="https://cdn.staticfile.org/materialize/0.100.2/css/materialize.min.css"  media="screen,projection"/>
+
+      	<!--Let browser know website is optimized for mobile-->
+     	 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<title>仙侠放置 - Xianxia Idle</title>
+
+	</head>
+	<body style = "background-color: white;" onload = "checkCookie();">
+
+		<script type="text/javascript" src="game.js"></script>
+		<!--Import jQuery before materialize.js-->
+<script src="//g8hh.com/static/js/jquery.min.js"></script>
+      	<script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.100.2/js/materialize.min.js"></script>
+      	<div class = "row">
+		<div class = "col s4">
+
+            <progress id = "progress" style = "width:100%" value="0" max="1"></progress>
+
+			<h4 style = "text-align: center;" id = "currentRealm">凡人</h4>
+
+            <a onclick = "rankup()" id = "rankupButton" class="waves-effect waves-light btn" style = "display: none;">进阶</a>
+
+			<h6 style = "text-align: center;" id = "currentPower">修为: 0.1</h6>
+            <h6 style = "text-align: center;" id = "xp">经验: 0</h6>
+            <h6 style = "text-align: center;" id = "money">灵石: 0</h6>
+
+			<img onclick = "increaseXp(xp, incrementAmount)" style = "width: 75%; display: block; margin-left: auto; margin-right: auto; outline: none;" type = "image" src = "monktransparent.png" id = "meditate"></img>
+
+            <a onclick="passiveClicks()" id = "passiveClickBtn" style = "width: 100%" data-position = "bottom" data-tooltip = "每秒会自动点击 - 成本: 10 灵石, 当前: 0 次/秒" class = "tooltipped waves-effect waves-light btn">幽静的冥想 - 10 灵石</a>
+
+		</div>
+
+		<div class = "col s8">
+
+			<ul class="tabs">
+        		<li class="tab col s2"><a href="#fight">战斗</a></li>
+        		<li class="tab col s2"><a href="#train">训练</a></li>
+        		<li class="tab col s2"><a href="#shop">商店</a></li>
+        		<li class="tab col s2"><a href="#legacy">遗物</a></li>
+						<li class="tab col s2"><a href="#settings">设置</a></li>
+
+     		 </ul>
+
+				 <div id = "settings">
+
+					 <br />
+
+					 <a onclick="localSave();" id = "localSaveBtn" style = "width: 40%;" data-position = "right" data-tooltip = "做一个手动的，本地，保存 - 游戏自动保存每60秒" class = "tooltipped waves-effect waves-light btn">本地保存</a> <p id = "localSaveConfirm" style = "display: inline;"></p>
+
+					 <br /> <br />
+
+					 <a onclick="stopFloating();" id = "stopFloatingBtn" style = "width: 40%;" data-position = "right" data-tooltip = "这是一个临时的图像变化，将需要重做每个遗物" class = "tooltipped waves-effect waves-light btn">停止浮动!</a>
+
+					 <br /> <br />
+
+					 <a onclick = "hardReset();" id = "hardResetBtn" style = "width: 40%;" data-position = "right" data-tooltip = "这将擦除您当前的所有进度，无法恢复它。" class = "tooltipped waves-effect waves-light btn">硬复位</a>
+
+					 <br /> <br />
+
+					 <div class="card blue-grey darken-1">
+        		<div class="card-content white-text">
+          		<span class="card-title">更新 0.3.1</span>
+          		<ul>
+								<li>Added Settings Tab, including local saving, hard resetting, and stopping the image floating.</li>
+								<li>Added confirmation for legacy, including a bit more information.</li>
+								<li>Added Update section in settings tab</li>
+								<li>Tried to make training's usage less confusing</li>
+								<li>Any thoughts, bugs or suggestions? Come join the discord!  <a href = "https://discord.gg/gkFQu58">Join Us!</a></li>
+							</ul>
+        		</div>
+      		</div>
+
+				 </div>
+
+     		 <div id = "fight">
+
+     		 	<table id = "fightTable">
+        			<thead>
+          				<tr>
+				              <th>战斗</th>
+                      <th>+</th>
+				              <th>敌人的修为等级</th>
+				              <th>奖励 (灵石)</th>
+				        </tr>
+				    </thead>
+
+				    <tbody>
+				    <tr>
+				    	<td><a onclick = "Fight('firstFight')" id = "firstFight" data-position = "bottom" data-tooltip = "胜利获取1灵石。 修为比敌人高可以保证获胜（超过0.1）" class="tooltipped waves-effect waves-light btn">和凡人战斗</a><p style = "display: none;" id = "firstFightDefeat"></p></td>
+                        <td><a onclick = "passiveFightOne();" id = "firstFightPassive" data-position = "bottom" data-tooltip = "自动战斗：每秒都会自动战斗一次(每次升级叠加) - 10 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
+				        <td id = "firstFightPower">0.1</td>
+				        <td id = "firstFightReward">1</td>
+				    </tr>
+				    <tr>
+				        <td><a onclick = "Fight('secondFight')" id = "secondFight" data-position = "bottom" data-tooltip = "胜利获取5灵石。 修为比敌人高可以保证获胜 (超过1.0)" class="tooltipped waves-effect waves-light btn">与傲慢的年轻导师战斗</a><p style = "display: none;" id = "secondFightDefeat"></p></td>
+                        <td><a onclick = "passiveFightTwo();" id = "secondFightPassive" data-position = "bottom" data-tooltip = "自动战斗：每 2 秒都会自动战斗一次(每次升级叠加) - 50 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
+				        <td id = "secondFightPower">1.0</td>
+				        <td id = "secondFightReward">5</td>
+				    </tr>
+				    <tr>
+				        <td><a onclick = "Fight('thirdFight')" id = "thirdFight" data-position = "bottom" data-tooltip = "胜利获取25灵石。 修为比敌人高可以保证获胜 (超过1.9)" class="tooltipped waves-effect waves-light btn">与年轻导师的大哥战斗</a><p style = "display: none;" id = "thirdFightDefeat"></p></td>
+                        <td><a onclick = "passiveFightThree();" id = "thirdFightPassive" data-position = "bottom" data-tooltip = "自动战斗：每 3 秒都会自动战斗一次(每次升级叠加) - 250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
+				        <td id = "thirdFightPower">1.9</td>
+				        <td id = "thirdFightReward">25</td>
+				    </tr>
+				    <tr>
+				        <td><a onclick = "Fight('fourthFight')" id = "fourthFight" data-position = "bottom" data-tooltip = "胜利获取125灵石。 修为比敌人高可以保证获胜 (超过3.0)" class="tooltipped waves-effect waves-light btn">与年轻导师的长辈战斗</a><p style = "display: none;" id = "fourthFightDefeat"></p></td>
+                        <td><a onclick = "passiveFightFour();" id = "fourthFightPassive" data-position = "bottom" data-tooltip = "自动战斗：每 4 秒都会自动战斗一次(每次升级叠加) - 1250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
+				        <td id = "fourthFightPower">3.0</td>
+				        <td id = "fourthFightReward">125</td>
+				    </tr>
+				    <tr>
+				        <td><a onclick = "Fight('fifthFight')" id = "fifthFight" data-position = "bottom" data-tooltip = "胜利获取625灵石。 修为比敌人高可以保证获胜 (超过4.3)" class="tooltipped waves-effect waves-light btn">与年轻导师的祖先战斗</a><p style = "display: none;" id = "fifthFightDefeat"></p></td>
+                        <td><a onclick = "passiveFightFive();" id = "fifthFightPassive" data-position = "bottom" data-tooltip = "自动战斗：每 5 秒都会自动战斗一次(每次升级叠加) - 6250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
+				        <td id = "fifthFightPower">4.3</td>
+				        <td id = "fifthFightReward">625</td>
+				    </tr>
+            <tr>
+                <td><a onclick = "Fight('sixthFight')" id = "sixthFight" data-position = "bottom" data-tooltip = "胜利获取3125灵石。 修为比敌人高可以保证获胜 (超过6.0)" class="tooltipped waves-effect waves-light btn">与宗门领袖战斗</a><p style = "display: none;" id = "sixthFightDefeat"></p></td>
+                <td><a onclick = "passiveFightSix();" id = "sixthFightPassive" data-position = "bottom" data-tooltip = "自动战斗：每 6 秒都会自动战斗一次(每次升级叠加) - 31250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td id = "sixthFightPower">6.3</td>
+                <td id = "sixthFightReward">3125</td>
+            </tr>
+            <tr>
+                <td><a onclick = "Fight('seventhFight')" id = "seventhFight" data-position = "bottom" data-tooltip = "胜利获取15625灵石。 修为比敌人高可以保证获胜 (超过8.0)" class="tooltipped waves-effect waves-light btn">一次性与所有宗门战斗</a><p style = "display: none;" id = "seventhFightDefeat"></p></td>
+                <td><a onclick = "passiveFightSeven();" id = "seventhFightPassive" data-position = "bottom" data-tooltip = "自动战斗：每 7 秒都会自动战斗一次(每次升级叠加) - 156250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td id = "seventhFightPower">8.0</td>
+                <td id = "seventhFightReward">15625</td>
+            </tr>
+						<tr id = "eighthFightRow" style = "display: none;">
+                <td><a onclick = "Fight('eighthFight')" id = "eighthFight" data-position = "bottom" data-tooltip = "胜利获取78125灵石。 修为比敌人高可以保证获胜 (超过10.0)" class="tooltipped waves-effect waves-light btn">与同行的僧侣战斗</a><p style = "display: none;" id = "eighthFightDefeat"></p></td>
+                <td><a onclick = "passiveFightEight();" id = "eighthFightPassive" data-position = "bottom" data-tooltip = "自动战斗：每 8 秒都会自动战斗一次(每次升级叠加) - 781250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td id = "eighthFightPower">10.0</td>
+                <td id = "eighthFightReward">78125</td>
+            </tr>
+						<tr id = "ninthFightRow" style = "display: none;">
+                <td><a onclick = "Fight('ninthFight')" id = "ninthFight" data-position = "bottom" data-tooltip = "胜利获取390625灵石。 修为比敌人高可以保证获胜 (超过12.3)" class="tooltipped waves-effect waves-light btn">与你祖辈的大师战斗</a><p style = "display: none;" id = "ninthFightDefeat"></p></td>
+                <td><a onclick = "passiveFightNine();" id = "ninthFightPassive" data-position = "bottom" data-tooltip = "自动战斗：每 9 秒都会自动战斗一次(每次升级叠加) - 3906250 灵石<br>" class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td id = "ninthFightPower">12.3</td>
+                <td id = "ninthFightReward">390625</td>
+            </tr>
+						<tr id = "tenthFightRow" style = "display: none;">
+                <td><a onclick = "Fight('tenthFight')" id = "tenthFight" data-position = "bottom" data-tooltip = "胜利获取1953125灵石。 修为比敌人高可以保证获胜 (超过14.9)" class="tooltipped waves-effect waves-light btn">与你家的宗师战斗</a><p style = "display: none;" id = "tenthFightDefeat"></p></td>
+                <td><a onclick = "passiveFightTen();" id = "tenthFightPassive" data-position = "bottom" data-tooltip = "自动战斗：每 10 秒都会自动战斗一次(每次升级叠加) - 19531250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td id = "tenthFightPower">14.9</td>
+                <td id = "tenthFightReward">1953125</td>
+            </tr>
+						<tr id = "eleventhFightRow" style = "display: none;">
+                <td><a onclick = "Fight('eleventhFight')" id = "eleventhFight" data-position = "bottom" data-tooltip = "胜利获取9765625灵石。 修为比敌人高可以保证获胜 (超过17.8)" class="tooltipped waves-effect waves-light btn">与杀害你全家的凶手战斗</a><p style = "display: none;" id = "eleventhFightDefeat"></p></td>
+                <td><a onclick = "passiveFightEleven();" id = "eleventhFightPassive" data-position = "bottom" data-tooltip = "自动战斗：每 11 秒都会自动战斗一次(每次升级叠加) - 97656250 灵石" class = "tooltipped waves-effect waves-light btn">+</a></td>
+                <td id = "eleventhFightPower">17.8</td>
+                <td id = "eleventhFightReward">9765625</td>
+            </tr>
+				    </tbody>
+				</table>
+
+
+     		 </div>
+
+     		 <div id = "train">
+
+					<h5 id = "displayClickPower" style = "text-align: center;">您当前每次点击获得的经验是： 0.1</h5>
+					<h5 id = "displayClickPowerLegacy" style = "display:none;">在遗物加成后您每次点击的经验是: 0.1</h5>
+
+     		 	<table id = "trainTable">
+
+     		 		<thead>
+
+     		 			<th>训练</th>
+     		 			<th>成本(灵石)</th>
+     		 			<th class = "tooltipped" data-position = "bottom" data-tooltip = "这是每次点击的基本经验，遗物的任何提升都会在此基础上应用。">每次点击增加基础经验</th>
+
+     		 		</thead>
+
+     		 		<tbody>
+
+     		 			<tr>
+
+     		 				<td><a onclick = "Train('firstTrain')" id = "firstTrain" class="waves-effect waves-light btn">使用训练室</a></td>
+     		 				<td id = "firstTrainCost">1</td>
+     		 				<td id = "firstTrainReward">0.001</td>
+
+     		 			</tr>
+
+     		 			<tr>
+
+     		 				<td><a onclick = "Train('secondTrain')" id = "secondTrain" class="waves-effect waves-light btn">在庭院中训练</a></td>
+     		 				<td id = "secondTrainCost">10</td>
+     		 				<td id = "secondTrainReward">0.003</td>
+
+     		 			</tr>
+
+     		 			<tr>
+
+     		 				<td><a onclick = "Train('thirdTrain')" id = "thirdTrain" class="waves-effect waves-light btn">接受先天期前辈的指导</a></td>
+     		 				<td id = "thirdTrainCost">100</td>
+     		 				<td id = "thirdTrainReward">0.009</td>
+
+     		 			</tr>
+
+     		 			<tr>
+
+     		 				<td><a onclick = "Train('fourthTrain')" id = "fourthTrain" class="waves-effect waves-light btn">尝试做些超出能力范围的事</a></td>
+     		 				<td id = "fourthTrainCost">1e+3</td>
+     		 				<td id = "fourthTrainReward">0.027</td>
+
+     		 			</tr>
+
+     		 			<tr>
+
+     		 				<td><a onclick = "Train('fifthTrain')" id = "fifthTrain" class="waves-effect waves-light btn">思考宇宙的奥秘</a></td>
+     		 				<td id = "fifthTrainCost">1e+4</td>
+     		 				<td id = "fifthTrainReward">0.081</td>
+
+     		 			</tr>
+
+              <tr>
+
+                <td><a onclick = "Train('sixthTrain')" id = "sixthTrain" class="waves-effect waves-light btn">从一颗垂死的星星中得到启示</a></td>
+                <td id = "sixthTrainCost">1e+5</td>
+                <td id = "sixthTrainReward">0.243</td>
+
+              </tr>
+
+              <tr>
+
+                <td><a onclick = "Train('seventhTrain')" id = "seventhTrain" class="waves-effect waves-light btn">屠杀敌人以增强道心</a></td>
+                <td id = "seventhTrainCost">1e+6</td>
+                <td id = "seventhTrainReward">0.729</td>
+
+              </tr>
+
+							<tr id = "eighthTrainRow" style = "display: none;">
+
+                <td><a onclick = "Train('eighthTrain')" id = "eighthTrain" class="waves-effect waves-light btn">遁入虚空</a></td>
+                <td id = "eighthTrainCost">1e+7</td>
+                <td id = "eighthTrainReward">2.187</td>
+
+              </tr>
+
+							<tr id = "ninthTrainRow" style = "display: none;">
+
+                <td><a onclick = "Train('ninthTrain')" id = "ninthTrain" class="waves-effect waves-light btn">理解空间的奥秘</a></td>
+                <td id = "ninthTrainCost">1e+8</td>
+                <td id = "ninthTrainReward">6.561</td>
+
+              </tr>
+
+							<tr id = "tenthTrainRow" style = "display: none;">
+
+                <td><a onclick = "Train('tenthTrain')" id = "tenthTrain" class="waves-effect waves-light btn">与时间合而为一</a></td>
+                <td id = "tenthTrainCost">1e+9</td>
+                <td id = "tenthTrainReward">19.683</td>
+
+              </tr>
+
+							<tr id = "eleventhTrainRow" style = "display: none;">
+
+                <td><a onclick = "Train('eleventhTrain')" id = "eleventhTrain" class="waves-effect waves-light btn">理解时间的奥秘</a></td>
+                <td id = "eleventhTrainCost">1e+10</td>
+                <td id = "eleventhTrainReward">59.049</td>
+
+              </tr>
+
+     		 		</tbody>
+
+
+     		 	</table>
+
+     		 </div>
+     		 <div id = "shop">
+
+     		 	<table id = "shopTable">
+
+     		 		<thead>
+
+     		 			<th>购买</th>
+     		 			<th>成本</th>
+     		 			<th>作用</th>
+
+     		 		</thead>
+
+     		 		<tbody>
+
+     		 			<tr style = "" id = "firstPurchaseRow">
+
+     		 				<td><a onclick = "firstSwordPurchase()" id = "firstPurchase" class="waves-effect waves-light btn">基础剑</a></td>
+     		 				<td id = "firstPurchaseCost">100</td>
+     		 				<td id = "firstPurchaseUse">增加修为 0.15</td>
+
+     		 			</tr>
+
+     		 			<tr style = "" id = "secondPurchaseRow">
+
+     		 				<td><a onclick = "firstManualPurchase()" id = "secondPurchase" class="waves-effect waves-light btn">基础剑功法</a></td>
+     		 				<td id = "secondPurchaseCost">500</td>
+     		 				<td id = "secondPurchaseUse">增加修为 0.15</td>
+
+     		 			</tr>
+
+     		 			<tr style = "" id = "thirdPurchaseRow">
+
+     		 				<td><a onclick = "firstCultivationPurchase()" id = "thirdPurchase" class="waves-effect waves-light btn">基础修炼功法</a></td>
+     		 				<td id = "thirdPurchaseCost">750</td>
+     		 				<td id = "thirdPurchaseUse">未来的进阶修为会额外增加0.1 </td>
+
+     		 			</tr>
+
+     		 			<tr style = "" id = "fourthPurchaseRow">
+
+     		 				<td><a onclick = "secondSwordPurchase()" id = "fourthPurchase" class="waves-effect waves-light btn">低阶圣剑</a></td>
+     		 				<td id = "fourthPurchaseCost">1e+4</td>
+     		 				<td id = "fourthPurchaseUse">增加修为 0.15</td>
+
+     		 			</tr>
+
+     		 			<tr style = "" id = "fifthPurchaseRow">
+
+     		 				<td><a onclick = "secondManualPurchase()" id = "fifthPurchase" class="waves-effect waves-light btn">中级剑功法</a></td>
+     		 				<td id = "fifthPurchaseCost">5e+4</td>
+     		 				<td id = "fifthPurchaseUse">增加修为 0.15</td>
+
+     		 			</tr>
+
+     		 			<tr style = "" id = "sixthPurchaseRow">
+
+     		 				<td><a onclick = "secondCultivationPurchase()" id = "sixthPurchase" class="waves-effect waves-light btn">中级修炼功法</a></td>
+     		 				<td id = "sixthPurchaseCost">7.5e+4</td>
+     		 				<td id = "sixthPurchaseUse">未来的进阶修为会额外增加0.1 </td>
+
+     		 			</tr>
+
+							<tr style = "display: none;" id = "seventhPurchaseRow">
+
+     		 				<td><a onclick = "thirdSwordPurchase()" id = "seventhPurchase" class="waves-effect waves-light btn">高阶圣剑</a></td>
+     		 				<td id = "seventhPurchaseCost">1e+6</td>
+     		 				<td id = "seventhPurchaseUse">增加修为 0.15</td>
+
+     		 			</tr>
+
+     		 			<tr style = "display: none;" id = "eighthPurchaseRow">
+
+     		 				<td><a onclick = "thirdManualPurchase()" id = "eighthPurchase" class="waves-effect waves-light btn">进阶剑功法</a></td>
+     		 				<td id = "eighthPurchaseCost">5e+6</td>
+     		 				<td id = "eighthPurchaseUse">增加修为 0.15</td>
+
+     		 			</tr>
+
+     		 			<tr style = "display: none;" id = "ninthPurchaseRow">
+
+     		 				<td><a onclick = "thirdCultivationPurchase()" id = "ninthPurchase" class="waves-effect waves-light btn">进阶修炼功法</a></td>
+     		 				<td id = "ninthPurchaseCost">7.5e+6</td>
+     		 				<td id = "ninthPurchaseUse">未来的进阶修为会额外增加0.1 </td>
+
+     		 			</tr>
+
+							<tr style = "display: none;" id = "tenthPurchaseRow">
+
+     		 				<td><a onclick = "fourthSwordPurchase()" id = "tenthPurchase" class="waves-effect waves-light btn">至高级圣剑</a></td>
+     		 				<td id = "tenthPurchaseCost">1e+8</td>
+     		 				<td id = "tenthPurchaseUse">增加修为 0.15</td>
+
+     		 			</tr>
+
+     		 			<tr style = "display: none;" id = "eleventhPurchaseRow">
+
+     		 				<td><a onclick = "fourthManualPurchase()" id = "eleventhPurchase" class="waves-effect waves-light btn">至高剑功法</a></td>
+     		 				<td id = "eleventhPurchaseCost">5e+8</td>
+     		 				<td id = "eleventhPurchaseUse">增加修为 0.15</td>
+
+     		 			</tr>
+
+     		 			<tr style = "display: none;" id = "twelfthPurchaseRow">
+
+     		 				<td><a onclick = "fourthCultivationPurchase()" id = "twelfthPurchase" class="waves-effect waves-light btn">至高修炼功法</a></td>
+     		 				<td id = "twelfthPurchaseCost">7.5e+8</td>
+     		 				<td id = "twelfthPurchaseUse">未来的进阶修为会额外增加0.1 </td>
+
+     		 			</tr>
+
+							<tr style = "display: none;" id = "thirteenthPurchaseRow">
+
+     		 				<td><a onclick = "fifthSwordPurchase()" id = "thirteenthPurchase" class="waves-effect waves-light btn">最终级圣剑</a></td>
+     		 				<td id = "thirteenthPurchaseCost">1e+10</td>
+     		 				<td id = "thirteenthPurchaseUse">增加修为 0.15</td>
+
+     		 			</tr>
+
+     		 			<tr style = "display: none;" id = "fourteenthPurchaseRow">
+
+     		 				<td><a onclick = "fifthManualPurchase()" id = "fourteenthPurchase" class="waves-effect waves-light btn">终极剑功法</a></td>
+     		 				<td id = "fourteenthPurchaseCost">5e+10</td>
+     		 				<td id = "fourteenthPurchaseUse">增加修为 0.15</td>
+
+     		 			</tr>
+
+     		 			<tr style = "display: none;" id = "fifteenthPurchaseRow">
+
+     		 				<td><a onclick = "fifthCultivationPurchase()" id = "fifteenthPurchase" class="waves-effect waves-light btn">终极修炼功法</a></td>
+     		 				<td id = "fifteenthPurchaseCost">7.5e+10</td>
+     		 				<td id = "fifteenthPurchaseUse">未来的进阶修为会额外增加0.1 </td>
+
+     		 			</tr>
+
+     		 		</tbody>
+
+     		 	</table>
+
+     		 </div>
+             <div id = "legacy">
+
+							 <h4 style = "text-align: center;" id = "legacyRequirement">达到先天后期阶段解锁遗产!</h4>
+
+							 <h4 style = "text-align: center; display: none;" data-position = "bottom" data-tooltip = "每个遗物点数都会增加1%的经验生成。消耗掉的遗物点数将不会有经验加成。遗物升级是永久的，并能在转生中保留下来" class = "tooltipped" id = "legacyPoints">遗物点数: 0</h4>
+
+							 <h5 style = "text-align: center; display: none;" id = "newLegacyPoints">遗物点数 (重置后获得): 0</h4>
+
+							 <a onclick="checkLegacy();" id = "legacyStartBtn" style = "width: 100%; display: none;" data-position = "bottom" data-tooltip = "转生会获得遗物点数，用来购买遗物，但是会失去现在的游戏进度" class = "tooltipped waves-effect waves-light btn">转生</a>
+
+							 <table style = "display: none;" id = "legacyTable">
+
+									 <thead>
+
+											 <th>遗物</th>
+											 <th>成本 (遗物点数)</th>
+
+									 </thead>
+
+									 <tbody>
+
+											 <tr id = "firstLegacyRow">
+
+													 <td><a onclick = "legacyAutoFightOnePurchase()" id = "firstAutoFightLegacy" class="waves-effect waves-light btn">获得购买两个额外的自动战斗升级的能力</a></td>
+													 <td id = "firstAutoFightLegacyCost">50</td>
+
+											 </tr>
+											 <tr id = "secondLegacyRow">
+
+													 <td><a onclick = "legacySwordPermOnePurchase()" id = "firstSwordPerm" class="waves-effect waves-light btn">开始时就拥有基础剑</a></td>
+													 <td id = "firstSwordPermCost">250</td>
+
+											 </tr>
+											 <tr id = "thirdLegacyRow">
+
+													 <td><a onclick = "legacyManualPermOnePurchase()" id = "firstManualPerm" class="waves-effect waves-light btn">开始时拥有基础剑功法</a></td>
+													 <td id = "firstManualPermCost">500</td>
+
+											 </tr>
+											 <tr id = "fourthLegacyRow">
+
+													 <td><a onclick = "legacyCultivationPermOnePurchase()" id = "firstCultivationPerm" class="waves-effect waves-light btn">开始时就拥有基础修炼功法</a></td>
+													 <td id = "firstCultivationPermCost">1e+3</td>
+
+											 </tr>
+											 <tr id = "fifthLegacyRow">
+
+													 <td><a onclick = "legacyShopOnePurchase()" id = "firstLegacyExtraShop" class="waves-effect waves-light btn">解锁3个额外商店购买项</a></td>
+													 <td id = "firstLegacyExtraShopCost">1e+4</td>
+
+											 </tr>
+											 <tr id = "sixthLegacyRow">
+
+													 <td><a onclick = "legacyAutoFightTwoPurchase()" id = "secondAutoFightLegacy" class="waves-effect waves-light btn">获得购买两个额外的自动战斗升级的能力</a></td>
+													 <td id = "secondAutoFightLegacyCost">5e+4</td>
+
+											 </tr>
+											 <tr id = "seventhLegacyRow">
+
+													 <td><a onclick = "legacySwordPermTwoPurchase()" id = "secondSwordPerm" class="waves-effect waves-light btn">开始时就拥有低阶圣剑</a></td>
+													 <td id = "secondSwordPermCost">1e+5</td>
+
+											 </tr>
+											 <tr id = "eighthLegacyRow">
+
+													 <td><a onclick = "legacyManualPermTwoPurchase()" id = "secondManualPerm" class="waves-effect waves-light btn">开始时就拥有中级剑功法</a></td>
+													 <td id = "secondManualPermCost">2.5e+5</td>
+
+											 </tr>
+											 <tr id = "ninthLegacyRow">
+
+													 <td><a onclick = "legacyCultivationPermTwoPurchase()" id = "secondCultivationPerm" class="waves-effect waves-light btn">开始时就拥有中级修炼功法</a></td>
+													 <td id = "secondCultivationPermCost">5e+5</td>
+
+											 </tr>
+											 <tr id = "tenthLegacyRow">
+
+													 <td><a onclick = "legacyExtraFightOnePurchase()" id = "firstLegacyExtraFight" class="waves-effect waves-light btn">解锁2个额外战斗项</a></td>
+													 <td id = "firstLegacyExtraFightCost">1e+6</td>
+
+											 </tr>
+											 <tr id = "eleventhLegacyRow">
+
+													 <td><a onclick = "legacyExtraTrainOnePurchase()" id = "firstLegacyExtraTrain" class="waves-effect waves-light btn">解锁2个额外训练项</a></td>
+													 <td id = "firstLegacyExtraTrainCost">1e+6</td>
+
+											 </tr>
+											 <tr id = "twelfthLegacyRow">
+
+													 <td><a onclick = "legacyAutoFightThreePurchase()" id = "thirdAutoFightLegacy" class="waves-effect waves-light btn">获得购买两个额外的自动战斗升级的能力</a></td>
+													 <td id = "thirdAutoFightLegacyCost">5e+6</td>
+
+											 </tr>
+											 <tr id = "thirteenthLegacyRow">
+
+													 <td><a onclick = "legacySwordPermThreePurchase()" id = "thirdSwordPerm" class="waves-effect waves-light btn">开始时就拥有高阶圣剑</a></td>
+													 <td id = "thirdSwordPermCost">1e+7</td>
+
+											 </tr>
+											 <tr id = "fourteenthLegacyRow">
+
+													 <td><a onclick = "legacyManualPermThreePurchase()" id = "thirdManualPerm" class="waves-effect waves-light btn">开始时就拥有进阶剑功法</a></td>
+													 <td id = "thirdManualPermCost">2.5e+7</td>
+
+											 </tr>
+											 <tr id = "fifteenthLegacyRow">
+
+													 <td><a onclick = "legacyCultivationPermThreePurchase()" id = "thirdCultivationPerm" class="waves-effect waves-light btn">开始时就拥有进阶修炼功法</a></td>
+													 <td id = "thirdCultivationPermCost">5e+7</td>
+
+											 </tr>
+											 <tr id = "sixteenthLegacyRow">
+
+													 <td><a onclick = "legacyShopTwoPurchase()" id = "secondLegacyExtraShop" class="waves-effect waves-light btn">解锁3个额外商店购买项Unlock 3 more shop purchases</a></td>
+													 <td id = "secondLegacyExtraShopCost">1e+8</td>
+
+											 </tr>
+											 <tr id = "seventeenthLegacyRow">
+
+													 <td><a onclick = "legacyAutoFightFourPurchase()" id = "fourthAutoFightLegacy" class="waves-effect waves-light btn">获得购买两个额外的自动战斗升级的能力</a></td>
+													 <td id = "fourthAutoFightLegacyCost">5e+8</td>
+
+											 </tr>
+											 <tr id = "eighteenthLegacyRow">
+
+													 <td><a onclick = "autoRankupPurchase()" id = "autoRankupLegacy" class="waves-effect waves-light btn">可以自动进阶</a></td>
+													 <td id = "autoRankupCost">1e+9</td>
+
+											 </tr>
+											 <tr id = "nineteenthLegacyRow">
+
+													 <td><a onclick = "legacyExtraFightTwoPurchase()" id = "secondLegacyExtraFight" class="waves-effect waves-light btn">解锁2个额外战斗</a></td>
+													 <td id = "secondLegacyExtraFightCost">1e+10</td>
+
+											 </tr>
+											 <tr id = "twentiethLegacyRow">
+
+													 <td><a onclick = "legacyExtraTrainTwoPurchase()" id = "firstLegacyExtraTrain" class="waves-effect waves-light btn">解锁2个额外训练</a></td>
+													 <td id = "secondLegacyExtraTrainCost">1e+10</td>
+
+											 </tr>
+											 <tr id = "twentyfirstLegacyRow">
+
+													 <td><a onclick = "legacyAutoFightFivePurchase()" id = "fifthAutoFightLegacy" class="waves-effect waves-light btn">获得购买两个额外的自动战斗升级的能力</a></td>
+													 <td id = "fifthAutoFightLegacyCost">5e+10</td>
+
+											 </tr>
+											 <tr id = "twentysecondLegacyRow">
+
+													 <td><a onclick = "legacySwordPermFourPurchase()" id = "fourthSwordPerm" class="waves-effect waves-light btn">开始时就拥有至高级圣剑</a></td>
+													 <td id = "fourthSwordPermCost">1e+11</td>
+
+											 </tr>
+											 <tr id = "twentythirdLegacyRow">
+
+													 <td><a onclick = "legacyManualPermFourPurchase()" id = "fourthManualPerm" class="waves-effect waves-light btn">开始时就拥有至高剑功法</a></td>
+													 <td id = "fourthManualPermCost">2.5e+11</td>
+
+											 </tr>
+											 <tr id = "twentyfourthLegacyRow">
+
+													 <td><a onclick = "legacyCultivationPermFourPurchase()" id = "fourthCultivationPerm" class="waves-effect waves-light btn">开始时拥有至高修炼功法</a></td>
+													 <td id = "fourthCultivationPermCost">5e+11</td>
+
+											 </tr>
+											 <tr id = "twentyfifthLegacyRow">
+
+													 <td><a onclick = "legacyShopThreePurchase()" id = "thirdLegacyExtraShop" class="waves-effect waves-light btn">解锁3个额外商店购买项</a></td>
+													 <td id = "thirdLegacyExtraShopCost">1e+12</td>
+
+											 </tr>
+									 </tbody>
+
+							 </table>
+
+            </div>
+		</div>
+	</div>
+<!--客服 开始-->
+<link rel="stylesheet" href="//g8hh.com/static/css/kf.css" type="text/css" media="screen" charset="utf-8">
+<script src="//g8hh.com/static/js/kf.js"></script>
+<!-- 客服 结束 -->
+<!--站长统计--> 
+<div style="display: none">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?028b1b5f659ed138230f4cafd7ad0dfc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    </div>
+	</body>
+</html>
